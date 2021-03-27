@@ -45,7 +45,7 @@ def generate_plane(_normal=[0,0,1], _offset=[0,0,0], _xrange=10, _yrange=10, _np
 
 	show_points(points)
 
-	save_pcd(points.T, out_file='/home/mano/work/robotics_ws/data/plane.bin')
+	save_pcd(points.T, out_file='/workspace/data/plane.bin')
 
 def generate_sphere(_r=1.0, _rnoise=0.1, _th_noise=0.1, _npoints=100):
 	r = _r + np.random.rand(1, _npoints*_npoints)*_rnoise
@@ -57,7 +57,7 @@ def generate_sphere(_r=1.0, _rnoise=0.1, _th_noise=0.1, _npoints=100):
 	
 	show_points(points)
 
-	save_pcd(points.T, out_file='/home/mano/work/robotics_ws/data/sphere.bin')
+	save_pcd(points.T, out_file='/workspace/data/sphere.bin')
 		
 
 if __name__=='__main__':
