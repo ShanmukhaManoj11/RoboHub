@@ -1,0 +1,132 @@
+\hypertarget{classKDNode}{}\doxysection{K\+D\+Node$<$ d, T $>$ Class Template Reference}
+\label{classKDNode}\index{KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}}
+
+
+\mbox{\hyperlink{classKDNode}{K\+D\+Node}} template class defining a node in a \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}.  
+
+
+
+
+{\ttfamily \#include $<$kdtree.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}} $>$ \mbox{\hyperlink{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}{K\+D\+Node\+Ptr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKDNode_a5af3e37cb1bb98e39f077ef57f7a55a0}{K\+D\+Node}} ()
+\item 
+\mbox{\hyperlink{classKDNode_ac6e6d8162e9f9c59380aa7b1c6ad2d8d}{K\+D\+Node}} (\mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \mbox{\hyperlink{classKDNode_a4aae254f647fafd95540997f1eed1b44}{point}}
+\item 
+\mbox{\hyperlink{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDNode_a617bbe8f66aaffecf02b60d070d794fa}{left}}
+\item 
+\mbox{\hyperlink{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDNode_a636a31929182990c1e0c4eeba1fc570c}{right}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int d, class T$>$\newline
+class K\+D\+Node$<$ d, T $>$}
+
+\mbox{\hyperlink{classKDNode}{K\+D\+Node}} template class defining a node in a \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}. 
+
+Definition at line 12 of file kdtree.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}\label{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}} 
+\index{KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}!KDNodePtr@{KDNodePtr}}
+\index{KDNodePtr@{KDNodePtr}!KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{KDNodePtr}{KDNodePtr}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classKDNode}{K\+D\+Node}}$>$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ d, T $>$\+::\mbox{\hyperlink{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}{K\+D\+Node\+Ptr}}}
+
+
+
+Definition at line 15 of file kdtree.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classKDNode_a5af3e37cb1bb98e39f077ef57f7a55a0}\label{classKDNode_a5af3e37cb1bb98e39f077ef57f7a55a0}} 
+\index{KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}!KDNode@{KDNode}}
+\index{KDNode@{KDNode}!KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{KDNode()}{KDNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ d, T $>$\+::\mbox{\hyperlink{classKDNode}{K\+D\+Node}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 21 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 : \mbox{\hyperlink{classKDNode_a4aae254f647fafd95540997f1eed1b44}{point}}(), \mbox{\hyperlink{classKDNode_a617bbe8f66aaffecf02b60d070d794fa}{left}}(\textcolor{keyword}{nullptr}), \mbox{\hyperlink{classKDNode_a636a31929182990c1e0c4eeba1fc570c}{right}}(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKDNode_ac6e6d8162e9f9c59380aa7b1c6ad2d8d}\label{classKDNode_ac6e6d8162e9f9c59380aa7b1c6ad2d8d}} 
+\index{KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}!KDNode@{KDNode}}
+\index{KDNode@{KDNode}!KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{KDNode()}{KDNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ d, T $>$\+::\mbox{\hyperlink{classKDNode}{K\+D\+Node}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 22 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 : \mbox{\hyperlink{classKDNode_a4aae254f647fafd95540997f1eed1b44}{point}}(p), \mbox{\hyperlink{classKDNode_a617bbe8f66aaffecf02b60d070d794fa}{left}}(\textcolor{keyword}{nullptr}), \mbox{\hyperlink{classKDNode_a636a31929182990c1e0c4eeba1fc570c}{right}}(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classKDNode_a4aae254f647fafd95540997f1eed1b44}\label{classKDNode_a4aae254f647fafd95540997f1eed1b44}} 
+\index{KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}!point@{point}}
+\index{point@{point}!KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}}$<$d, T$>$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ d, T $>$\+::point}
+
+
+
+Definition at line 17 of file kdtree.\+h.
+
+\mbox{\Hypertarget{classKDNode_a617bbe8f66aaffecf02b60d070d794fa}\label{classKDNode_a617bbe8f66aaffecf02b60d070d794fa}} 
+\index{KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}!left@{left}}
+\index{left@{left}!KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ d, T $>$\+::left}
+
+
+
+Definition at line 18 of file kdtree.\+h.
+
+\mbox{\Hypertarget{classKDNode_a636a31929182990c1e0c4eeba1fc570c}\label{classKDNode_a636a31929182990c1e0c4eeba1fc570c}} 
+\index{KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}!right@{right}}
+\index{right@{right}!KDNode$<$ d, T $>$@{KDNode$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDNode_afde8e62d68ef44dc4df5d8e898a0578a}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ d, T $>$\+::right}
+
+
+
+Definition at line 19 of file kdtree.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{kdtree_8h}{kdtree.\+h}}\end{DoxyCompactItemize}

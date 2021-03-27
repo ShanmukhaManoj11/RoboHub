@@ -1,0 +1,193 @@
+\hypertarget{classPoint}{}\doxysection{Point$<$ d, T $>$ Class Template Reference}
+\label{classPoint}\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+
+
+\mbox{\hyperlink{classPoint}{Point}} template class.  
+
+
+
+
+{\ttfamily \#include $<$point\+\_\+types.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPoint_a40af589f7f0a4498957b5a417a4170a3}{Point}} ()
+\item 
+\mbox{\hyperlink{classPoint_a160d4746e1bbb9965eb267009d2fb4a0}{Point}} (std\+::vector$<$ T $>$ \&v)
+\item 
+\mbox{\hyperlink{classPoint_ab6bddcfaffa2b35ba35020fff686b7c5}{Point}} (std\+::vector$<$ T $>$ \&\&v)
+\item 
+T \& \mbox{\hyperlink{classPoint_a1e22428b3f62580c493644c645c72ffa}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\item 
+const T \& \mbox{\hyperlink{classPoint_abf948f520e6e6b6969e510adc351f00e}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\item 
+double \mbox{\hyperlink{classPoint_ac16257eb2e92c45d79e076c8c6ebab7f}{distance\+\_\+to}} (const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point) const
+\item 
+bool \mbox{\hyperlink{classPoint_a4d9c1f6c47e1088805331f5e59b4be5b}{is\+\_\+equal\+\_\+to}} (const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int d, class T$>$\newline
+class Point$<$ d, T $>$}
+
+\mbox{\hyperlink{classPoint}{Point}} template class. 
+
+Definition at line 12 of file point\+\_\+types.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPoint_a40af589f7f0a4498957b5a417a4170a3}\label{classPoint_a40af589f7f0a4498957b5a417a4170a3}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!Point@{Point}}
+\index{Point@{Point}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::\mbox{\hyperlink{classPoint}{Point}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(d, 0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a160d4746e1bbb9965eb267009d2fb4a0}\label{classPoint_a160d4746e1bbb9965eb267009d2fb4a0}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!Point@{Point}}
+\index{Point@{Point}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::\mbox{\hyperlink{classPoint}{Point}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 20 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(v) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_ab6bddcfaffa2b35ba35020fff686b7c5}\label{classPoint_ab6bddcfaffa2b35ba35020fff686b7c5}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!Point@{Point}}
+\index{Point@{Point}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::\mbox{\hyperlink{classPoint}{Point}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&\&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 22 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(v) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPoint_a1e22428b3f62580c493644c645c72ffa}\label{classPoint_a1e22428b3f62580c493644c645c72ffa}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+T\& \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 24 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keywordflow}{if}(i<0 || i>=d) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"index out of bounds"});}
+\DoxyCodeLine{27         \textcolor{keywordflow}{return} \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i];}
+\DoxyCodeLine{28     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_abf948f520e6e6b6969e510adc351f00e}\label{classPoint_abf948f520e6e6b6969e510adc351f00e}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+const T\& \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         \textcolor{keywordflow}{if}(i<0 || i>=d) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"index out of bounds"});}
+\DoxyCodeLine{33         \textcolor{keywordflow}{return} \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i];}
+\DoxyCodeLine{34     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_ac16257eb2e92c45d79e076c8c6ebab7f}\label{classPoint_ac16257eb2e92c45d79e076c8c6ebab7f}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!distance\_to@{distance\_to}}
+\index{distance\_to@{distance\_to}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{distance\_to()}{distance\_to()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+double \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::distance\+\_\+to (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 36 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         \textcolor{keywordtype}{double} sq\_dist = 0.0;}
+\DoxyCodeLine{39         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) sq\_dist += (this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] -\/ point.\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i])*(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] -\/ point.\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]);}
+\DoxyCodeLine{40         \textcolor{keywordflow}{return} std::sqrt(sq\_dist);}
+\DoxyCodeLine{41     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a4d9c1f6c47e1088805331f5e59b4be5b}\label{classPoint_a4d9c1f6c47e1088805331f5e59b4be5b}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!is\_equal\_to@{is\_equal\_to}}
+\index{is\_equal\_to@{is\_equal\_to}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_equal\_to()}{is\_equal\_to()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+bool \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::is\+\_\+equal\+\_\+to (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 43 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]!=point.\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{46         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{47     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}\label{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!x@{x}}
+\index{x@{x}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+std\+::vector$<$T$>$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file point\+\_\+types.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{point__types_8h}{point\+\_\+types.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,381 @@
+\hypertarget{classKDTree}{}\doxysection{K\+D\+Tree$<$ d, T $>$ Class Template Reference}
+\label{classKDTree}\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+
+
+\mbox{\hyperlink{classKDTree}{K\+D\+Tree}} template class.  
+
+
+
+
+{\ttfamily \#include $<$kdtree.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ d, T $>$ $>$ \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKDTree_ae6363981a91d4916125b15e0b0b5c2e8}{K\+D\+Tree}} ()
+\item 
+void \mbox{\hyperlink{classKDTree_a0d95cf2b51557fb9c78bd999472349f8}{build}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&pointvec)
+\item 
+\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDTree_ace51ada4c10a2e94c832ad2bc3efdaf2}{search}} (const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point, std\+::string mode=\char`\"{}closest\char`\"{})
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} $>$ \mbox{\hyperlink{classKDTree_a0b3a9bbc380672b543c3f4b6fd07de51}{neighborhood}} (const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point, const double \&radius)
+\begin{DoxyCompactList}\small\item\em get nodes in the tree that are with in radius units from the query point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDTree_a64366a7b6ddce80ccf203723cb65bdd3}{build\+\_\+tree\+\_\+recursive}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&pointvec, int l, int r, int id)
+\begin{DoxyCompactList}\small\item\em recursive helper function to build tree from a point vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}{search\+\_\+exact}} (\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&cur\+\_\+root, const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point, int id, \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&rnode)
+\begin{DoxyCompactList}\small\item\em recursive helper function to search for exact query point in the tree \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}{search\+\_\+closest}} (\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&cur\+\_\+root, const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point, int id, \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&rnode, double \&min\+\_\+dist)
+\begin{DoxyCompactList}\small\item\em recursive helper function to search for closest point in the tree to the query point \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}{neighborhood\+\_\+recursive}} (\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&cur\+\_\+root, const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point, const double \&radius, int id, std\+::vector$<$ \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} $>$ \&neighbors)
+\begin{DoxyCompactList}\small\item\em recursive helper function to retreive points in the tree that are within a radius of the query point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDTree_adf955d75e777700003ca38f9a3b14148}{root}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$unsigned int d, class T$>$\newline
+class K\+D\+Tree$<$ d, T $>$}
+
+\mbox{\hyperlink{classKDTree}{K\+D\+Tree}} template class. 
+
+\mbox{\hyperlink{classKDTree}{K\+D\+Tree}} can be used to store k-\/dimensional data points and efficiently perform search operations ~\newline
+ For example 2 dimensional real value points can be stored in a {\ttfamily \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$2, float$>$} type tree 
+
+Definition at line 32 of file kdtree.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classKDTree_a737ce1eceaaef969da22da2d10a13890}\label{classKDTree_a737ce1eceaaef969da22da2d10a13890}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!KDNodePtr@{KDNodePtr}}
+\index{KDNodePtr@{KDNodePtr}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{KDNodePtr}{KDNodePtr}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$d, T$>$ $>$ \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}}}
+
+
+
+Definition at line 35 of file kdtree.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classKDTree_ae6363981a91d4916125b15e0b0b5c2e8}\label{classKDTree_ae6363981a91d4916125b15e0b0b5c2e8}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!KDTree@{KDTree}}
+\index{KDTree@{KDTree}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{KDTree()}{KDTree()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::\mbox{\hyperlink{classKDTree}{K\+D\+Tree}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 37 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37 : \mbox{\hyperlink{classKDTree_adf955d75e777700003ca38f9a3b14148}{root}}(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKDTree_a0d95cf2b51557fb9c78bd999472349f8}\label{classKDTree_a0d95cf2b51557fb9c78bd999472349f8}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!build@{build}}
+\index{build@{build}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+void \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::build (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&}]{pointvec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 39 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \mbox{\hyperlink{classKDTree_adf955d75e777700003ca38f9a3b14148}{root}} = \mbox{\hyperlink{classKDTree_a64366a7b6ddce80ccf203723cb65bdd3}{build\_tree\_recursive}}(pointvec, 0, pointvec.size(), 0);}
+\DoxyCodeLine{42     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKDTree_ace51ada4c10a2e94c832ad2bc3efdaf2}\label{classKDTree_ace51ada4c10a2e94c832ad2bc3efdaf2}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!search@{search}}
+\index{search@{search}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::search (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point,  }\item[{std\+::string}]{mode = {\ttfamily \char`\"{}closest\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 44 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{KDNodePtr}} rnode = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{47         \textcolor{keywordtype}{double} min\_dist = 0.0;}
+\DoxyCodeLine{48         \textcolor{keywordflow}{if}(mode.compare(\textcolor{stringliteral}{"exact"})==0) \mbox{\hyperlink{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}{search\_exact}}(\mbox{\hyperlink{classKDTree_adf955d75e777700003ca38f9a3b14148}{root}}, point, 0, rnode);}
+\DoxyCodeLine{49         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(mode.compare(\textcolor{stringliteral}{"closest"})==0) \mbox{\hyperlink{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}{search\_closest}}(\mbox{\hyperlink{classKDTree_adf955d75e777700003ca38f9a3b14148}{root}}, point, 0, rnode, min\_dist);}
+\DoxyCodeLine{50         \textcolor{keywordflow}{else} \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"mode should be 'exact' or 'closest'"});}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} rnode;}
+\DoxyCodeLine{52     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKDTree_a0b3a9bbc380672b543c3f4b6fd07de51}\label{classKDTree_a0b3a9bbc380672b543c3f4b6fd07de51}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!neighborhood@{neighborhood}}
+\index{neighborhood@{neighborhood}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{neighborhood()}{neighborhood()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+std\+::vector$<$\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}}$>$ \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::neighborhood (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point,  }\item[{const double \&}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get nodes in the tree that are with in radius units from the query point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & query point \\
+\hline
+{\em radius} & search radius \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns vector of node pointers that are within radius units from the input query point 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62     \{}
+\DoxyCodeLine{63         std::vector<KDNodePtr> neighbors;}
+\DoxyCodeLine{64         \mbox{\hyperlink{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}{neighborhood\_recursive}}(\mbox{\hyperlink{classKDTree_adf955d75e777700003ca38f9a3b14148}{root}}, point, radius, 0, neighbors);}
+\DoxyCodeLine{65         \textcolor{keywordflow}{return} neighbors;}
+\DoxyCodeLine{66     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKDTree_a64366a7b6ddce80ccf203723cb65bdd3}\label{classKDTree_a64366a7b6ddce80ccf203723cb65bdd3}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!build\_tree\_recursive@{build\_tree\_recursive}}
+\index{build\_tree\_recursive@{build\_tree\_recursive}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{build\_tree\_recursive()}{build\_tree\_recursive()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::build\+\_\+tree\+\_\+recursive (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&}]{pointvec,  }\item[{int}]{l,  }\item[{int}]{r,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+recursive helper function to build tree from a point vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointvec} & vector of points \\
+\hline
+{\em l} & start index of the vector \\
+\hline
+{\em r} & end index the vector \\
+\hline
+{\em id} & current search dimension\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+builds tree using the vector between indices \mbox{[}l, r) 
+\end{DoxyNote}
+
+
+Definition at line 81 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if}(r<=l) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{84         \textcolor{keywordtype}{int} m = l+(r-\/l)/2;}
+\DoxyCodeLine{85         \textcolor{comment}{// O(n) partition such that elements to the left are < than element at pivot position and elements to the right are >= to element at pivot position}}
+\DoxyCodeLine{86         std::nth\_element(pointvec.begin()+l, pointvec.begin()+m, pointvec.begin()+r, [\&\textcolor{keywordtype}{id}](\mbox{\hyperlink{classPoint}{Point<d, T>}}\& a, \mbox{\hyperlink{classPoint}{Point<d, T>}}\& b)\{}
+\DoxyCodeLine{87             return a[id]<b[id];}
+\DoxyCodeLine{88         \});}
+\DoxyCodeLine{89         \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{KDNodePtr}} cur\_root = std::make\_shared< KDNode<d, T> >(pointvec[m]);}
+\DoxyCodeLine{90         \textcolor{keywordtype}{id} = (\textcolor{keywordtype}{id}+1)\%d;}
+\DoxyCodeLine{91         \textcolor{comment}{// recursively build tree for left and right branches}}
+\DoxyCodeLine{92         cur\_root-\/>left = \mbox{\hyperlink{classKDTree_a64366a7b6ddce80ccf203723cb65bdd3}{build\_tree\_recursive}}(pointvec, l, m, \textcolor{keywordtype}{id});}
+\DoxyCodeLine{93         cur\_root-\/>right = \mbox{\hyperlink{classKDTree_a64366a7b6ddce80ccf203723cb65bdd3}{build\_tree\_recursive}}(pointvec, m+1, r, \textcolor{keywordtype}{id});}
+\DoxyCodeLine{94         \textcolor{keywordflow}{return} cur\_root;}
+\DoxyCodeLine{95     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}\label{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!search\_exact@{search\_exact}}
+\index{search\_exact@{search\_exact}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{search\_exact()}{search\_exact()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+void \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::search\+\_\+exact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&}]{cur\+\_\+root,  }\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point,  }\item[{int}]{id,  }\item[{\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&}]{rnode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+recursive helper function to search for exact query point in the tree 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+\_\+root} & current root to recurse from \\
+\hline
+{\em point} & query point \\
+\hline
+{\em id} & current search dimension \\
+\hline
+{\em rnode} & result node in the tree that is the exact query point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106     \{}
+\DoxyCodeLine{107         \textcolor{keywordflow}{if}(cur\_root==\textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{108         \textcolor{keywordflow}{if}(cur\_root-\/>point.is\_equal\_to(point))}
+\DoxyCodeLine{109         \{}
+\DoxyCodeLine{110             rnode = cur\_root;}
+\DoxyCodeLine{111             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113         T dx = cur\_root-\/>point[id]-\/point[id];}
+\DoxyCodeLine{114         \textcolor{keywordtype}{id} = (\textcolor{keywordtype}{id}+1)\%d;}
+\DoxyCodeLine{115         \textcolor{keywordflow}{if}(dx>0) \mbox{\hyperlink{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}{search\_exact}}(cur\_root-\/>left, point, \textcolor{keywordtype}{id}, rnode);}
+\DoxyCodeLine{116         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(dx<0) \mbox{\hyperlink{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}{search\_exact}}(cur\_root-\/>right, point, \textcolor{keywordtype}{id}, rnode);}
+\DoxyCodeLine{117         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{118         \{}
+\DoxyCodeLine{119             \mbox{\hyperlink{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}{search\_exact}}(cur\_root-\/>right, point, \textcolor{keywordtype}{id}, rnode);}
+\DoxyCodeLine{120             \textcolor{keywordflow}{if}(rnode==\textcolor{keyword}{nullptr}) \mbox{\hyperlink{classKDTree_ad24a6f665ff74c0cf79635a69c05d2ef}{search\_exact}}(cur\_root-\/>left, point, \textcolor{keywordtype}{id}, rnode);}
+\DoxyCodeLine{121         \}}
+\DoxyCodeLine{122     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}\label{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!search\_closest@{search\_closest}}
+\index{search\_closest@{search\_closest}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{search\_closest()}{search\_closest()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+void \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::search\+\_\+closest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&}]{cur\+\_\+root,  }\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point,  }\item[{int}]{id,  }\item[{\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&}]{rnode,  }\item[{double \&}]{min\+\_\+dist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+recursive helper function to search for closest point in the tree to the query point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+\_\+root} & current root to recurse from \\
+\hline
+{\em point} & query point \\
+\hline
+{\em id} & current search dimension \\
+\hline
+{\em rnode} & probable result node, it gets updated based on current distance \\
+\hline
+{\em min\+\_\+dist} & probable minimum distance to the query point from any node in the tree \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134     \{}
+\DoxyCodeLine{135         \textcolor{keywordflow}{if}(cur\_root==\textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{136         \textcolor{keywordtype}{double} dist = cur\_root-\/>point.distance\_to(point);}
+\DoxyCodeLine{137         \textcolor{comment}{// update minimum distance and result node if current distance < current minimum distance}}
+\DoxyCodeLine{138         \textcolor{keywordflow}{if}(rnode==\textcolor{keyword}{nullptr} || dist < min\_dist)}
+\DoxyCodeLine{139         \{}
+\DoxyCodeLine{140             min\_dist = dist;}
+\DoxyCodeLine{141             rnode = cur\_root;}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143         \textcolor{keywordflow}{if}(dist==0) \textcolor{keywordflow}{return}; \textcolor{comment}{// exact node is found}}
+\DoxyCodeLine{144         T dx = cur\_root-\/>point[id]-\/point[id];}
+\DoxyCodeLine{145         \textcolor{keywordtype}{id} = (\textcolor{keywordtype}{id}+1)\%d;}
+\DoxyCodeLine{146         \textcolor{comment}{// search in the corresponding branch based on `dx`}}
+\DoxyCodeLine{147         \textcolor{keywordflow}{if}(dx>0) \mbox{\hyperlink{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}{search\_closest}}(cur\_root-\/>left, point, \textcolor{keywordtype}{id}, rnode, min\_dist);}
+\DoxyCodeLine{148         \textcolor{keywordflow}{else} \mbox{\hyperlink{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}{search\_closest}}(cur\_root-\/>right, point, \textcolor{keywordtype}{id}, rnode, min\_dist);}
+\DoxyCodeLine{149         \textcolor{keywordflow}{if}(abs(dx)<min\_dist) \textcolor{comment}{// if abs(dx) < current minimum distance, closest node can be in the other branch}}
+\DoxyCodeLine{150         \{}
+\DoxyCodeLine{151             \textcolor{keywordflow}{if}(dx>0) \mbox{\hyperlink{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}{search\_closest}}(cur\_root-\/>right, point, \textcolor{keywordtype}{id}, rnode, min\_dist);}
+\DoxyCodeLine{152             \textcolor{keywordflow}{else} \mbox{\hyperlink{classKDTree_abb69670cc288f4567aa9ab4ecc588ef5}{search\_closest}}(cur\_root-\/>left, point, \textcolor{keywordtype}{id}, rnode, min\_dist);}
+\DoxyCodeLine{153         \}}
+\DoxyCodeLine{154     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}\label{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!neighborhood\_recursive@{neighborhood\_recursive}}
+\index{neighborhood\_recursive@{neighborhood\_recursive}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{neighborhood\_recursive()}{neighborhood\_recursive()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+void \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::neighborhood\+\_\+recursive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \&}]{cur\+\_\+root,  }\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point,  }\item[{const double \&}]{radius,  }\item[{int}]{id,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} $>$ \&}]{neighbors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+recursive helper function to retreive points in the tree that are within a radius of the query point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cur\+\_\+root} & current root to recurse from \\
+\hline
+{\em point} & query point \\
+\hline
+{\em radius} & search radius around the query point \\
+\hline
+{\em id} & current search dimension \\
+\hline
+{\em neighbors} & vector of neighbors in the search area of the query point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file kdtree.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{166     \{}
+\DoxyCodeLine{167         \textcolor{keywordflow}{if}(cur\_root==\textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{168         \textcolor{comment}{// if distance between cur\_root and query point <= radius, add cur\_root to neighbors}}
+\DoxyCodeLine{169         \textcolor{keywordtype}{double} dist = cur\_root-\/>point.distance\_to(point);}
+\DoxyCodeLine{170         \textcolor{keywordflow}{if}(dist<=radius) neighbors.push\_back(cur\_root);}
+\DoxyCodeLine{171         T dx = cur\_root-\/>point[id]-\/point[id];}
+\DoxyCodeLine{172         \textcolor{keywordtype}{id} = (\textcolor{keywordtype}{id}+1)\%d;}
+\DoxyCodeLine{173         \textcolor{comment}{// search the corresponding branch base on `dx`}}
+\DoxyCodeLine{174         \textcolor{keywordflow}{if}(dx>0) \mbox{\hyperlink{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}{neighborhood\_recursive}}(cur\_root-\/>left, point, radius, \textcolor{keywordtype}{id}, neighbors);}
+\DoxyCodeLine{175         \textcolor{keywordflow}{else} \mbox{\hyperlink{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}{neighborhood\_recursive}}(cur\_root-\/>right, point, radius, \textcolor{keywordtype}{id}, neighbors);}
+\DoxyCodeLine{176         \textcolor{keywordflow}{if}(abs(dx)<=radius) \textcolor{comment}{// neighbors can be in the other branch}}
+\DoxyCodeLine{177         \{}
+\DoxyCodeLine{178             \textcolor{keywordflow}{if}(dx>0) \mbox{\hyperlink{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}{neighborhood\_recursive}}(cur\_root-\/>right, point, radius, \textcolor{keywordtype}{id}, neighbors);}
+\DoxyCodeLine{179             \textcolor{keywordflow}{else} \mbox{\hyperlink{classKDTree_aea61e5d194bb4f5bb73897503aa6d6ed}{neighborhood\_recursive}}(cur\_root-\/>left, point, radius, \textcolor{keywordtype}{id}, neighbors);}
+\DoxyCodeLine{180         \}}
+\DoxyCodeLine{181     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classKDTree_adf955d75e777700003ca38f9a3b14148}\label{classKDTree_adf955d75e777700003ca38f9a3b14148}} 
+\index{KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}!root@{root}}
+\index{root@{root}!KDTree$<$ d, T $>$@{KDTree$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classKDTree_a737ce1eceaaef969da22da2d10a13890}{K\+D\+Node\+Ptr}} \mbox{\hyperlink{classKDTree}{K\+D\+Tree}}$<$ d, T $>$\+::root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 69 of file kdtree.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{kdtree_8h}{kdtree.\+h}}\end{DoxyCompactItemize}

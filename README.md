@@ -1,0 +1,1 @@
+RoboHub is a collection of C++ implementations of algorithms used in robotics
