@@ -18,3 +18,5 @@ add_executable(test_kdtree tests/test_kdtree.cpp)
 add_executable(test_sphere tests/test_sphere.cpp)
 
 add_executable(test_normal_estimation tests/test_normal_estimation.cpp)
+
+add_executable(test_plane_extraction tests/test_plane_extraction.cpp)
