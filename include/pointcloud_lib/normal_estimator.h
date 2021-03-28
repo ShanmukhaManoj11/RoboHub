@@ -7,7 +7,7 @@
 template<unsigned int d, class T>
 class NormalEstimator
 {
-	static_assert(d==3 && (std::is_same<T, float>::value || std::is_same<T, double>::value), "only supports float and double points");
+	static_assert(d==3 && (std::is_same<T, float>::value || std::is_same<T, double>::value), "only supports 3 dimensional float and double points");
 public:
 	NormalEstimator(): _has_normals(false) {}
 
