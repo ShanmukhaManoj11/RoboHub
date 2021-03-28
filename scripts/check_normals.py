@@ -3,7 +3,7 @@ import struct
 import mayavi.mlab
 
 def check_plane():
-	pointcloud = np.fromfile('/workspace/data/plane.bin', dtype=np.float32, count=-1).reshape([-1,3])
+	pointcloud = np.fromfile('../data/plane.bin', dtype=np.float32, count=-1).reshape([-1,3])
 	x = pointcloud[:, 0]  
 	y = pointcloud[:, 1]  
 	z = pointcloud[:, 2]  
@@ -17,7 +17,7 @@ def check_plane():
 							figure=fig
 						)
 
-	normals = np.fromfile('/workspace/data/plane_normals.bin', dtype=np.float32, count=-1).reshape([-1,3])
+	normals = np.fromfile('../data/plane_normals.bin', dtype=np.float32, count=-1).reshape([-1,3])
 	mayavi.mlab.quiver3d(x, y, z, normals[:,0], normals[:,1], normals[:,2], line_width=0.2, scale_factor=0.2, figure=fig)
 
 	mayavi.mlab.plot3d(np.linspace(0,1,10), np.linspace(0,0,10), np.linspace(0,0,10), tube_radius=0.025, color=(1,0,0), figure=fig)
@@ -27,7 +27,7 @@ def check_plane():
 	mayavi.mlab.show()
 
 def check_sphere():
-	pointcloud = np.fromfile('/workspace/data/sphere.bin', dtype=np.float32, count=-1).reshape([-1,3])
+	pointcloud = np.fromfile('../data/sphere.bin', dtype=np.float32, count=-1).reshape([-1,3])
 	x = pointcloud[:, 0]  
 	y = pointcloud[:, 1]  
 	z = pointcloud[:, 2]  
@@ -41,7 +41,7 @@ def check_sphere():
 							figure=fig
 						)
 
-	normals = np.fromfile('/workspace/data/sphere_normals.bin', dtype=np.float32, count=-1).reshape([-1,3])
+	normals = np.fromfile('../data/sphere_normals.bin', dtype=np.float32, count=-1).reshape([-1,3])
 	mayavi.mlab.quiver3d(x, y, z, normals[:,0], normals[:,1], normals[:,2], line_width=0.2, scale_factor=0.2, figure=fig)
 
 	mayavi.mlab.plot3d(np.linspace(0,1,10), np.linspace(0,0,10), np.linspace(0,0,10), tube_radius=0.025, color=(1,0,0), figure=fig)

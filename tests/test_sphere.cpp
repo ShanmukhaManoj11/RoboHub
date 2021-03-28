@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 		return a[0]<b[0];
 	};
 
-	std::string binfile = "/home/mano/work/robotics_ws/data/sphere.bin";
+	std::string binfile = "../data/sphere.bin";
 	std::vector<Point3f> pointvec = read_bin<3, float>(binfile);
 	
 	for(int i=0; i<pointvec.size(); i += 100)
