@@ -47,6 +47,40 @@ public:
 	}
 
 	/**
+	* @brief insert a point into the tree
+	*
+	* @param point to be inserted
+	*/
+	KDNodePtr insert(Point<d, T>& point)
+	{
+		if(root==nullptr)
+		{
+			root = std::make_shared< KDNode<d, T> >(point);
+			return root;
+		}
+		KDNodePtr cur = root;
+		KDNodePtr parent = nullptr;
+		int id = 0;
+		while(cur != nullptr)
+		{
+			parent = cur;
+			if(point[id] < cur->point[id]) cur = cur->left;
+			else cur = cur->right;
+			id = (id+1)%d;
+		}
+		if(point[id] < parent->point[id]) 
+		{
+			parent->left = std::make_shared< KDNode<d, T> >(point);
+			return parent->left;
+		}
+		else 
+		{
+			parent->right = std::make_shared< KDNode<d, T> >(point);
+			return parent->right;
+		}
+	}
+
+	/**
 	* @brief retreive the closest point in the tree to a query point
 	*
 	* @param point query point
@@ -61,6 +95,19 @@ public:
 		double min_dist = 0.0;
 		search_closest(root, point, 0, rnode, min_dist);
 		return rnode->point;
+	}
+
+	/**
+	* @override 
+	* 
+	* retrive the node corresponding to the closest point in the tree to the query point
+	*/
+	KDNodePtr search(const Point<d, T>& point, int i)
+	{
+		KDNodePtr rnode = nullptr;
+		double min_dist = 0.0;
+		search_closest(root, point, 0, rnode, min_dist);
+		return rnode;
 	}
 
 	/**

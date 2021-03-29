@@ -67,6 +67,13 @@ public:
 		return res;
 	}
 
+	Point operator*(T k)
+	{
+		Point res;
+		for(int i=0; i<d; ++i) res[i] = k*(this->x[i]);
+		return res;
+	}
+
 	double magnitude()
 	{
 		return distance_to(Point());

@@ -22,3 +22,5 @@ add_executable(test_normal_estimation tests/test_normal_estimation.cpp)
 add_executable(test_plane_extraction tests/test_plane_extraction.cpp)
 
 add_executable(test_astar tests/test_astar.cpp)
+
+add_executable(test_rrt tests/test_rrt.cpp)
