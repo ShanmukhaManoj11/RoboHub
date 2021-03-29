@@ -6,26 +6,48 @@
 #include <random>
 #include <unordered_map>
 
+/**
+* @brief RRT planner for 2d maps
+*/
 class RRTPlanner2d: public BaseGlobalPlanner2d
 {
 public:
+	/// @brief Default constructor
 	RRTPlanner2d() {}
 
+	/**
+	* @brief computes path using RRT from start to goal points
+	*/
 	std::vector<Point2f> compute_plan(Point2f& start, Point2f& goal)
 	{
 		return rrt(start, goal, 100000, 0.5);
 	}
 private:
+	/// @brief typedef to store nodes and parents for fast retrieval
 	typedef std::unordered_map< std::shared_ptr< KDNode<2, float> >, std::shared_ptr< KDNode<2, float> > > NodeParentMap;
+
+	/**
+	* @brief rrt method to compute path between start and goal points
+	*
+	* A KDTree is used to store the nodes for fast retrieval of nearest nodes
+	*
+	* @param start start point
+	* @param goal goal point
+	* @param max_iterations maximum iterations for the RRT process
+	* @param max_step maximum step to limit step distance between neighboring waypoints
+	* @return return vector of points constituting the path
+	*/
 	std::vector<Point2f> rrt(Point2f& start, Point2f& goal, int max_iterations, double max_step)
 	{
 		std::random_device rd;
 		std::mt19937 gen(rd());
 		std::uniform_real_distribution<float> distrib(-30.0, 30.0);
 
+		// construct a 2 dimensional tree and define a map to save parent corresponding parent nodes
 		KDTree<2, float> tree;
 		NodeParentMap node_map;
 
+		// insert start point to tree
 		auto ptr = tree.insert(start);
 		node_map.insert({ptr, nullptr});
 
@@ -33,13 +55,18 @@ private:
 		Point2f cur = start;
 		while(cur.distance_to(goal)>max_step && i<max_iterations)
 		{
+			// generate a random point and use the goal point now and then to bias the computed path towards goal
 			Point2f rand_point;
 			if(i%10==9) rand_point = goal;
 			else rand_point = Point2f({distrib(gen), distrib(gen)});
 
+			// get closest point to the random point in the current tree
 			std::shared_ptr< KDNode<2, float> > closest_point_ptr = tree.search(rand_point, 0);
 			Point2f closest_point = closest_point_ptr->point;
+			// get stop point (which is max_step units from the retrieved closest point) on the line joining closest point and the generated random point
+			// this step limits the distance between neighboring waypoints in the final path
 			Point2f valid_point = get_stop_point(closest_point, rand_point, max_step);
+			// use ray tracing to get the valid point on the line that stop before cutting an occupied cell
 			valid_point = ray_trace_sampled(closest_point, valid_point, 200);
 
 			if(!valid_point.is_equal_to(closest_point))
@@ -48,10 +75,12 @@ private:
 				node_map.insert({ptr, closest_point_ptr});
 			}
 			
+			// get current point in the tree that is closest to the goal
 			cur = tree.search(goal);
 			++i;
 		}
 
+		// retrieve path from iterating from the goal and closest point to goal in the tree using the node-parent map
 		std::vector<Point2f> path;
 		ptr = tree.search(goal, 0); 
 		cur = ptr->point;
@@ -64,6 +93,14 @@ private:
 		return path;
 	}
 
+	/**
+	* @brief helper function to get the stop point on the line joining stat and end points to limit the max step between neighboring waypoints
+	*
+	* @param start start point
+	* @param end end point
+	* @param max_step maximum step for the stop point on the line joining start and end points
+	* @return returns the stop point
+	*/
 	Point2f get_stop_point(Point2f& start, Point2f& end, double max_step)
 	{
 		double dist = start.distance_to(end);
@@ -75,6 +112,17 @@ private:
 		}
 	}
 
+	/**
+	* @brief ray tracing method that generates a set of equidistant samples on the line joining start and end points and checks for the points that donot cut an occupied cell in the map
+	* 
+	* @note Since this method samples the line into equidistant points, there can be cases where the generated points miss the occupied cells completely.
+	* A better procedure is needed
+	*
+	* @param start start point
+	* @param end end point
+	* @param nsamples number of equidistant samples to be used on the line
+	* @return returns the first valid point on the line joining start and end that doesn't cut an occupied cell when traversed from start point 
+	*/
 	Point2f ray_trace_sampled(Point2f& start, Point2f& end, int nsamples)
 	{
 		Point2f diff = end-start;
@@ -95,6 +143,17 @@ private:
 		return start + diff*d1;
 	}
 
+	/**
+	* @brief ray trace procedure using bresenham ray tracing
+	*
+	* @note This method retreives all the cells on the descritized map that the line passes through and is better approach than the sampled implementation.
+	*
+	* @todo This call is sometimes causing seg-fault. Debug the implementation
+	*
+	* @param start start point
+	* @param end end point
+	* @return returns the first valid point on the line joining start and end that doesn't cut an occupied cell when traversed from start point 
+	*/
 	Point2f ray_trace(Point2f& start, Point2f& end)
 	{
 		int height = _map.get_height(), width = _map.get_width();
@@ -140,6 +199,15 @@ private:
 		return start;
 	}
 
+	/**
+	* @brief Bresenham ray tracing algorithm
+	*
+	* @param x0 row index of first point
+	* @param y0 column index of first point
+	* @param x1 row index of second point
+	* @param y1 column index of second point
+	* @return return vector cell indices that the line betwee first and second points passes through
+	*/
 	std::vector<Point2i> bresenham_ray_trace(int x0, int y0, int x1, int y1)
 	{
 		bool steep = (std::abs(y1-y0) > std::abs(x1-x0));

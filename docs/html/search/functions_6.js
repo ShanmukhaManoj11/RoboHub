@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['point_42',['Point',['../classPoint.html#a40af589f7f0a4498957b5a417a4170a3',1,'Point::Point()'],['../classPoint.html#a160d4746e1bbb9965eb267009d2fb4a0',1,'Point::Point(std::vector&lt; T &gt; &amp;v)'],['../classPoint.html#ab6bddcfaffa2b35ba35020fff686b7c5',1,'Point::Point(std::vector&lt; T &gt; &amp;&amp;v)']]]
+  ['ij_5fto_5fxy_131',['ij_to_xy',['../classOccupancyGrid2d.html#ae868f67f9a98f53c007f61f848371813',1,'OccupancyGrid2d']]],
+  ['insert_132',['insert',['../classKDTree.html#aa1699eb41681cec03692d6528cf8a236',1,'KDTree']]],
+  ['is_5fequal_5fto_133',['is_equal_to',['../classPoint.html#a636251d703d8af8ba5ccc91faa0dad87',1,'Point']]]
 ];

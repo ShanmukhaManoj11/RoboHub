@@ -1,0 +1,170 @@
+\hypertarget{classPlaneExtractor}{}\doxysection{Plane\+Extractor$<$ T $>$ Class Template Reference}
+\label{classPlaneExtractor}\index{PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}}
+
+
+\mbox{\hyperlink{classPlaneExtractor}{Plane\+Extractor}} class to extract maximum plane for a point cloud.  
+
+
+
+
+{\ttfamily \#include $<$plane\+\_\+extractor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlaneExtractor_a4196ba82dbae645f0033b9beeb94f5fc}{Plane\+Extractor}} ()
+\item 
+std\+::pair$<$ std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$, std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$ $>$ \mbox{\hyperlink{classPlaneExtractor_a8a247381959b920ee7355d44cb2be274}{extract\+\_\+plane}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$ \&pointvec, int max\+\_\+iterations, double dist\+\_\+thresh)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPoint}{Point}}$<$ 4, T $>$ \mbox{\hyperlink{classPlaneExtractor_a86a983eb219b502d1d8eacd2ae4673c4}{estimate\+\_\+plane\+\_\+through}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$ \&\&points)
+\begin{DoxyCompactList}\small\item\em estimate plane passing through 3 points \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+set$<$ int $>$ \mbox{\hyperlink{classPlaneExtractor_a654b6052676346ca8fd5a3309c458215}{extract\+\_\+plane\+\_\+ransac}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$ \&pointvec, int max\+\_\+iterations, double dist\+\_\+thresh)
+\begin{DoxyCompactList}\small\item\em extract indices of points that a maximum plane will fit using ransac \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Plane\+Extractor$<$ T $>$}
+
+\mbox{\hyperlink{classPlaneExtractor}{Plane\+Extractor}} class to extract maximum plane for a point cloud. 
+
+maximum plane is the plane that passes through maximum number of points in the current point cloud 
+
+Definition at line 15 of file plane\+\_\+extractor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlaneExtractor_a4196ba82dbae645f0033b9beeb94f5fc}\label{classPlaneExtractor_a4196ba82dbae645f0033b9beeb94f5fc}} 
+\index{PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}!PlaneExtractor@{PlaneExtractor}}
+\index{PlaneExtractor@{PlaneExtractor}!PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PlaneExtractor()}{PlaneExtractor()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classPlaneExtractor}{Plane\+Extractor}}$<$ T $>$\+::\mbox{\hyperlink{classPlaneExtractor}{Plane\+Extractor}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file plane\+\_\+extractor.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlaneExtractor_a8a247381959b920ee7355d44cb2be274}\label{classPlaneExtractor_a8a247381959b920ee7355d44cb2be274}} 
+\index{PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}!extract\_plane@{extract\_plane}}
+\index{extract\_plane@{extract\_plane}!PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{extract\_plane()}{extract\_plane()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::pair$<$ std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$3, T$>$ $>$, std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$3, T$>$ $>$ $>$ \mbox{\hyperlink{classPlaneExtractor}{Plane\+Extractor}}$<$ T $>$\+::extract\+\_\+plane (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$ \&}]{pointvec,  }\item[{int}]{max\+\_\+iterations,  }\item[{double}]{dist\+\_\+thresh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 21 of file plane\+\_\+extractor.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \textcolor{keyword}{auto} inliers = \mbox{\hyperlink{classPlaneExtractor_a654b6052676346ca8fd5a3309c458215}{extract\_plane\_ransac}}(pointvec, max\_iterations, dist\_thresh);}
+\DoxyCodeLine{24         std::vector< Point<3, T> > plane\_points;}
+\DoxyCodeLine{25         std::vector< Point<3, T> > other\_points;}
+\DoxyCodeLine{26         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<pointvec.size(); ++i)}
+\DoxyCodeLine{27         \{}
+\DoxyCodeLine{28             \textcolor{keywordflow}{if}(inliers.find(i)==inliers.end()) other\_points.push\_back(pointvec[i]);}
+\DoxyCodeLine{29             \textcolor{keywordflow}{else} plane\_points.push\_back(pointvec[i]);}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31         \textcolor{keywordflow}{return} \{plane\_points, other\_points\};}
+\DoxyCodeLine{32     \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlaneExtractor_a86a983eb219b502d1d8eacd2ae4673c4}\label{classPlaneExtractor_a86a983eb219b502d1d8eacd2ae4673c4}} 
+\index{PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}!estimate\_plane\_through@{estimate\_plane\_through}}
+\index{estimate\_plane\_through@{estimate\_plane\_through}!PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{estimate\_plane\_through()}{estimate\_plane\_through()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}}$<$4, T$>$ \mbox{\hyperlink{classPlaneExtractor}{Plane\+Extractor}}$<$ T $>$\+::estimate\+\_\+plane\+\_\+through (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$ \&\&}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+estimate plane passing through 3 points 
+
+if x0, x1, and x2 are 3 3d-\/points then coefficients of the plane passing through these points (a, b, c, d) can be calculated as follows, ~\newline
+ {\ttfamily d = -\/(a$\ast$x0\mbox{[}0\mbox{]} + b$\ast$x0\mbox{[}1\mbox{]} + c$\ast$x0\mbox{[}2\mbox{]})} ~\newline
+ (a, b, c) represents the plane normal and can be calcualted as cross-\/product of vectors {\ttfamily x1x0} and {\ttfamily x2x0} 
+
+Definition at line 41 of file plane\+\_\+extractor.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \textcolor{comment}{// vector x1x0 = x1-\/x0}}
+\DoxyCodeLine{44         \mbox{\hyperlink{classPoint}{Point<3, T>}} v1 = points[1]-\/points[0];}
+\DoxyCodeLine{45         \textcolor{comment}{// vector x2x0 = x2-\/x0}}
+\DoxyCodeLine{46         \mbox{\hyperlink{classPoint}{Point<3, T>}} v2 = points[2]-\/points[0];}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \mbox{\hyperlink{classPoint}{Point<4, T>}} coefs;}
+\DoxyCodeLine{49         coefs[0] = (v1[1]*v2[2])-\/(v2[1]*v1[2]);}
+\DoxyCodeLine{50         coefs[1] = (v2[0]*v1[2])-\/(v1[0]*v2[2]);}
+\DoxyCodeLine{51         coefs[2] = (v1[0]*v2[1])-\/(v2[0]*v1[1]);}
+\DoxyCodeLine{52         coefs[3] = -\/(coefs[0]*points[0][0] + coefs[1]*points[0][1] + coefs[2]*points[0][2]);}
+\DoxyCodeLine{53         \textcolor{keywordflow}{return} coefs;}
+\DoxyCodeLine{54     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlaneExtractor_a654b6052676346ca8fd5a3309c458215}\label{classPlaneExtractor_a654b6052676346ca8fd5a3309c458215}} 
+\index{PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}!extract\_plane\_ransac@{extract\_plane\_ransac}}
+\index{extract\_plane\_ransac@{extract\_plane\_ransac}!PlaneExtractor$<$ T $>$@{PlaneExtractor$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{extract\_plane\_ransac()}{extract\_plane\_ransac()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::unordered\+\_\+set$<$int$>$ \mbox{\hyperlink{classPlaneExtractor}{Plane\+Extractor}}$<$ T $>$\+::extract\+\_\+plane\+\_\+ransac (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ 3, T $>$ $>$ \&}]{pointvec,  }\item[{int}]{max\+\_\+iterations,  }\item[{double}]{dist\+\_\+thresh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+extract indices of points that a maximum plane will fit using ransac 
+
+
+
+Definition at line 59 of file plane\+\_\+extractor.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         std::unordered\_set<int> inliers;}
+\DoxyCodeLine{62         srand(time(NULL));}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{int} n = pointvec.size();}
+\DoxyCodeLine{65         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<max\_iterations; ++i)}
+\DoxyCodeLine{66         \{}
+\DoxyCodeLine{67             std::unordered\_set<int> inliers\_this\_iteration;}
+\DoxyCodeLine{68             \textcolor{keywordtype}{int} i0 = rand()\%n;}
+\DoxyCodeLine{69             \textcolor{keywordtype}{int} i1 = rand()\%n;}
+\DoxyCodeLine{70             \textcolor{keywordflow}{while}(i0==i1) i1 = rand()\%n;}
+\DoxyCodeLine{71             \textcolor{keywordtype}{int} i2 = rand()\%n;}
+\DoxyCodeLine{72             \textcolor{keywordflow}{while}(i0==i2 || i1==i2) i2 = rand()\%n;}
+\DoxyCodeLine{73             \textcolor{keyword}{auto} coefs = \mbox{\hyperlink{classPlaneExtractor_a86a983eb219b502d1d8eacd2ae4673c4}{estimate\_plane\_through}}(\{pointvec[i0], pointvec[i1], pointvec[i2]\});}
+\DoxyCodeLine{74             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<n; ++j)}
+\DoxyCodeLine{75             \{}
+\DoxyCodeLine{76                 \textcolor{keywordflow}{if}(i0==j || i1==j || i2==j) inliers\_this\_iteration.insert(j);}
+\DoxyCodeLine{77                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{78                 \{}
+\DoxyCodeLine{79                     \textcolor{keywordtype}{double} dist = std::abs(coefs[0]*pointvec[j][0] + coefs[1]*pointvec[j][1] + coefs[2]*pointvec[j][2] + coefs[3])/std::sqrt(coefs[0]*coefs[0] + coefs[1]*coefs[1] + coefs[2]*coefs[2]);}
+\DoxyCodeLine{80                     \textcolor{keywordflow}{if}(dist <= dist\_thresh) inliers\_this\_iteration.insert(j);}
+\DoxyCodeLine{81                 \}}
+\DoxyCodeLine{82             \}}
+\DoxyCodeLine{83             \textcolor{keywordflow}{if}(inliers.size() < inliers\_this\_iteration.size()) inliers = inliers\_this\_iteration;}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85         \textcolor{keywordflow}{return} inliers;}
+\DoxyCodeLine{86     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/pointcloud\+\_\+lib/\mbox{\hyperlink{plane__extractor_8h}{plane\+\_\+extractor.\+h}}\end{DoxyCompactItemize}

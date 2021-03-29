@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kdnode_27',['KDNode',['../classKDNode.html',1,'']]],
-  ['kdtree_28',['KDTree',['../classKDTree.html',1,'']]]
+  ['astarnode_88',['AstarNode',['../structAstarPlanner2d_1_1AstarNode.html',1,'AstarPlanner2d']]],
+  ['astarplanner2d_89',['AstarPlanner2d',['../classAstarPlanner2d.html',1,'']]]
 ];

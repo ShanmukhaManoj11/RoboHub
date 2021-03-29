@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_50',['x',['../classPoint.html#ae81fbb9ee83f435c764da7ffc1b1289f',1,'Point']]]
+  ['left_171',['left',['../classKDNode.html#a617bbe8f66aaffecf02b60d070d794fa',1,'KDNode']]]
 ];

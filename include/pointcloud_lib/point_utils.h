@@ -16,6 +16,9 @@ Point<d, T> compute_mean(std::vector< Point<d, T> >& pointvec)
 	return mean;
 }
 
+/**
+* @brief compute covariance matrix given a vector points
+*/
 template<unsigned int d, class T>
 Eigen::Matrix<T, d, d> compute_covariance_matrix(std::vector< Point<d, T> >& pointvec)
 {

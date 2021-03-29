@@ -1,0 +1,134 @@
+\hypertarget{classBaseGlobalPlanner2d}{}\doxysection{Base\+Global\+Planner2d Class Reference}
+\label{classBaseGlobalPlanner2d}\index{BaseGlobalPlanner2d@{BaseGlobalPlanner2d}}
+
+
+Base global planner using 2d occupancy maps.  
+
+
+
+
+{\ttfamily \#include $<$base\+\_\+global\+\_\+planner.\+h$>$}
+
+Inheritance diagram for Base\+Global\+Planner2d\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBaseGlobalPlanner2d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBaseGlobalPlanner2d_a9d8c653f58a722a1cb0e0759a55be240}{Base\+Global\+Planner2d}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBaseGlobalPlanner2d_a049838d22cc2b8f29ef1d0ca3f1bc4ac}{set\+\_\+map}} (std\+::vector$<$ int $>$ \&data, float resolution, int width, int height, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} origin)
+\begin{DoxyCompactList}\small\item\em set occupancy grid data \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} $>$ \mbox{\hyperlink{classBaseGlobalPlanner2d_af69f65aa9c026419114ee117eb2c4d04}{compute\+\_\+plan}} (\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&start, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&goal)=0
+\begin{DoxyCompactList}\small\item\em virtual function that needs to be defined by derived planner classes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOccupancyGrid2d}{Occupancy\+Grid2d}} \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em occupancy grid describing the world map \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base global planner using 2d occupancy maps. 
+
+This provides an abstract interface wrapping around an occupancy grid data. Planner interfaces inheriting this base class will define ths {\ttfamily compute\+\_\+plan} function tht computes path from a 2d start point to a goal point 
+
+Definition at line 13 of file base\+\_\+global\+\_\+planner.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBaseGlobalPlanner2d_a9d8c653f58a722a1cb0e0759a55be240}\label{classBaseGlobalPlanner2d_a9d8c653f58a722a1cb0e0759a55be240}} 
+\index{BaseGlobalPlanner2d@{BaseGlobalPlanner2d}!BaseGlobalPlanner2d@{BaseGlobalPlanner2d}}
+\index{BaseGlobalPlanner2d@{BaseGlobalPlanner2d}!BaseGlobalPlanner2d@{BaseGlobalPlanner2d}}
+\doxysubsubsection{\texorpdfstring{BaseGlobalPlanner2d()}{BaseGlobalPlanner2d()}}
+{\footnotesize\ttfamily Base\+Global\+Planner2d\+::\+Base\+Global\+Planner2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+default constructor 
+
+
+
+Definition at line 17 of file base\+\_\+global\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBaseGlobalPlanner2d_a049838d22cc2b8f29ef1d0ca3f1bc4ac}\label{classBaseGlobalPlanner2d_a049838d22cc2b8f29ef1d0ca3f1bc4ac}} 
+\index{BaseGlobalPlanner2d@{BaseGlobalPlanner2d}!set\_map@{set\_map}}
+\index{set\_map@{set\_map}!BaseGlobalPlanner2d@{BaseGlobalPlanner2d}}
+\doxysubsubsection{\texorpdfstring{set\_map()}{set\_map()}}
+{\footnotesize\ttfamily void Base\+Global\+Planner2d\+::set\+\_\+map (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{data,  }\item[{float}]{resolution,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}}}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set occupancy grid data 
+
+
+
+Definition at line 20 of file base\+\_\+global\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_ab6d7e40efff01e1517c40f1c098b775b}{set}}(data, resolution, width, height, origin);}
+\DoxyCodeLine{23     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBaseGlobalPlanner2d_af69f65aa9c026419114ee117eb2c4d04}\label{classBaseGlobalPlanner2d_af69f65aa9c026419114ee117eb2c4d04}} 
+\index{BaseGlobalPlanner2d@{BaseGlobalPlanner2d}!compute\_plan@{compute\_plan}}
+\index{compute\_plan@{compute\_plan}!BaseGlobalPlanner2d@{BaseGlobalPlanner2d}}
+\doxysubsubsection{\texorpdfstring{compute\_plan()}{compute\_plan()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}}$>$ Base\+Global\+Planner2d\+::compute\+\_\+plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{start,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{goal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+virtual function that needs to be defined by derived planner classes 
+
+This generate a vector of 2d points (waypoints) that constitute a path from start point to a goal point
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & start point \\
+\hline
+{\em goal} & goal point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns vector of waypoints from start to goal 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classAstarPlanner2d_a8cd773a748f60082f5afc39eb5d82e94}{Astar\+Planner2d}}, and \mbox{\hyperlink{classRRTPlanner2d_a1fb94110443c6727f9af2f30448d27c9}{R\+R\+T\+Planner2d}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}\label{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}} 
+\index{BaseGlobalPlanner2d@{BaseGlobalPlanner2d}!\_map@{\_map}}
+\index{\_map@{\_map}!BaseGlobalPlanner2d@{BaseGlobalPlanner2d}}
+\doxysubsubsection{\texorpdfstring{\_map}{\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOccupancyGrid2d}{Occupancy\+Grid2d}} Base\+Global\+Planner2d\+::\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+occupancy grid describing the world map 
+
+
+
+Definition at line 37 of file base\+\_\+global\+\_\+planner.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/planning\+\_\+lib/\mbox{\hyperlink{base__global__planner_8h}{base\+\_\+global\+\_\+planner.\+h}}\end{DoxyCompactItemize}

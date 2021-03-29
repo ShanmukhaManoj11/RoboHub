@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['search_43',['search',['../classKDTree.html#ace51ada4c10a2e94c832ad2bc3efdaf2',1,'KDTree']]],
-  ['search_5fclosest_44',['search_closest',['../classKDTree.html#abb69670cc288f4567aa9ab4ecc588ef5',1,'KDTree']]],
-  ['search_5fexact_45',['search_exact',['../classKDTree.html#ad24a6f665ff74c0cf79635a69c05d2ef',1,'KDTree']]]
+  ['kdnode_134',['KDNode',['../classKDNode.html#a5af3e37cb1bb98e39f077ef57f7a55a0',1,'KDNode::KDNode()'],['../classKDNode.html#ac6e6d8162e9f9c59380aa7b1c6ad2d8d',1,'KDNode::KDNode(Point&lt; d, T &gt; &amp;p)']]],
+  ['kdtree_135',['KDTree',['../classKDTree.html#ae6363981a91d4916125b15e0b0b5c2e8',1,'KDTree']]]
 ];

@@ -1,0 +1,376 @@
+\hypertarget{classOccupancyGrid2d}{}\doxysection{Occupancy\+Grid2d Class Reference}
+\label{classOccupancyGrid2d}\index{OccupancyGrid2d@{OccupancyGrid2d}}
+
+
+Occupacy grid for 2d maps.  
+
+
+
+
+{\ttfamily \#include $<$occupancy\+\_\+grid2d.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOccupancyGrid2d_a3769be9e7024fcbde9f8df30c34a40ce}{Occupancy\+Grid2d}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOccupancyGrid2d_ab6d7e40efff01e1517c40f1c098b775b}{set}} (std\+::vector$<$ int $>$ \&data, float resolution, int width, int height, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} origin)
+\begin{DoxyCompactList}\small\item\em set occupancy grid data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classOccupancyGrid2d_add5aad4b60a60e6e93ebdd4db1b13073}{xy\+\_\+to\+\_\+ij}} (float x, float y, int \&i, int \&j)
+\begin{DoxyCompactList}\small\item\em Convert (x,y) to map indices (i,j) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOccupancyGrid2d_ae868f67f9a98f53c007f61f848371813}{ij\+\_\+to\+\_\+xy}} (int i, int j, float \&x, float \&y)
+\begin{DoxyCompactList}\small\item\em Convert map indices (i,j) to world coordinates (x,y) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classOccupancyGrid2d_a42aa5a3e6d765229d516040dd8e69746}{get\+\_\+resolution}} ()
+\begin{DoxyCompactList}\small\item\em get map resolution \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classOccupancyGrid2d_a6fa6ba4bd6d9a05f220c6ae5d7a9bbad}{get\+\_\+width}} ()
+\begin{DoxyCompactList}\small\item\em get map width \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classOccupancyGrid2d_ad606b838abdf655b05123dc22fd537d4}{get\+\_\+height}} ()
+\begin{DoxyCompactList}\small\item\em get map height \end{DoxyCompactList}\item 
+int \& \mbox{\hyperlink{classOccupancyGrid2d_a6396b66ecc1228bb9a0e92b020c85092}{operator()}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em overload () operator to access grid cell at index (i,j) \end{DoxyCompactList}\item 
+int \& \mbox{\hyperlink{classOccupancyGrid2d_aa4ebea68b6fea03f3ca8d218dec8e7d8}{operator()}} (int i)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classOccupancyGrid2d_a3ab015d20a648dfa1f7128b42a25e857}{\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em 2d occupancy probability data stored in row-\/major order linearly \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}{\+\_\+resolution}}
+\begin{DoxyCompactList}\small\item\em map resolution \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classOccupancyGrid2d_ace2446f78c307726dc67cfabee942362}{\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em map width as number of map columns \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classOccupancyGrid2d_a69ec4be155c650301e9d375f2783b3f3}{\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em map height as number of map rows \end{DoxyCompactList}\item 
+\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \mbox{\hyperlink{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}{\+\_\+origin}}
+\begin{DoxyCompactList}\small\item\em map origin in world coordinates \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Occupacy grid for 2d maps. 
+
+Defines interface for 2-\/dimensional occupancy gird maps. Value at each cell in the grid, describes the probability of the cell being occupied. 
+
+Definition at line 12 of file occupancy\+\_\+grid2d.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOccupancyGrid2d_a3769be9e7024fcbde9f8df30c34a40ce}\label{classOccupancyGrid2d_a3769be9e7024fcbde9f8df30c34a40ce}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!OccupancyGrid2d@{OccupancyGrid2d}}
+\index{OccupancyGrid2d@{OccupancyGrid2d}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{OccupancyGrid2d()}{OccupancyGrid2d()}}
+{\footnotesize\ttfamily Occupancy\+Grid2d\+::\+Occupancy\+Grid2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+default constructor 
+
+
+
+Definition at line 16 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOccupancyGrid2d_ab6d7e40efff01e1517c40f1c098b775b}\label{classOccupancyGrid2d_ab6d7e40efff01e1517c40f1c098b775b}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!set@{set}}
+\index{set@{set}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Occupancy\+Grid2d\+::set (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{data,  }\item[{float}]{resolution,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}}}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set occupancy grid data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & occupancy data of 2d map expressed as 1d array stored in row major order \\
+\hline
+{\em resolution} & float value specifying map resolution \\
+\hline
+{\em width} & width of map in number of cells \\
+\hline
+{\em height} & height of map in number of cells \\
+\hline
+{\em origin} & Point2f origin of map in world coordinates (in meters) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \mbox{\hyperlink{classOccupancyGrid2d_a3ab015d20a648dfa1f7128b42a25e857}{\_data}} = data;}
+\DoxyCodeLine{30         \mbox{\hyperlink{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}{\_resolution}} = resolution;}
+\DoxyCodeLine{31         \mbox{\hyperlink{classOccupancyGrid2d_ace2446f78c307726dc67cfabee942362}{\_width}} = width;}
+\DoxyCodeLine{32         \mbox{\hyperlink{classOccupancyGrid2d_a69ec4be155c650301e9d375f2783b3f3}{\_height}} = height;}
+\DoxyCodeLine{33         \mbox{\hyperlink{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}{\_origin}} = origin;}
+\DoxyCodeLine{34     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOccupancyGrid2d_add5aad4b60a60e6e93ebdd4db1b13073}\label{classOccupancyGrid2d_add5aad4b60a60e6e93ebdd4db1b13073}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!xy\_to\_ij@{xy\_to\_ij}}
+\index{xy\_to\_ij@{xy\_to\_ij}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{xy\_to\_ij()}{xy\_to\_ij()}}
+{\footnotesize\ttfamily bool Occupancy\+Grid2d\+::xy\+\_\+to\+\_\+ij (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{int \&}]{i,  }\item[{int \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convert (x,y) to map indices (i,j) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & input x (in world coordinates) \\
+\hline
+{\em y} & input y (in world coordinates) \\
+\hline
+{\em i} & variable to store computed row index \\
+\hline
+{\em j} & variable to store computed column index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if the computed (i,j) is within map bounds, else return false 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         i = std::floor((x-\/\mbox{\hyperlink{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}{\_origin}}[0])/\mbox{\hyperlink{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}{\_resolution}});}
+\DoxyCodeLine{48         j = std::floor((y-\/\mbox{\hyperlink{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}{\_origin}}[1])/\mbox{\hyperlink{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}{\_resolution}});}
+\DoxyCodeLine{49         \textcolor{keywordflow}{return} i>=0 \&\& i<\_height \&\& j>=0 \&\& j<\mbox{\hyperlink{classOccupancyGrid2d_ace2446f78c307726dc67cfabee942362}{\_width}};}
+\DoxyCodeLine{50     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOccupancyGrid2d_ae868f67f9a98f53c007f61f848371813}\label{classOccupancyGrid2d_ae868f67f9a98f53c007f61f848371813}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!ij\_to\_xy@{ij\_to\_xy}}
+\index{ij\_to\_xy@{ij\_to\_xy}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{ij\_to\_xy()}{ij\_to\_xy()}}
+{\footnotesize\ttfamily void Occupancy\+Grid2d\+::ij\+\_\+to\+\_\+xy (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{float \&}]{x,  }\item[{float \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convert map indices (i,j) to world coordinates (x,y) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row index of the map \\
+\hline
+{\em j} & column index of the map \\
+\hline
+{\em x} & computed x value in world coordinate \\
+\hline
+{\em y} & computed y value in world coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62         x = i*\mbox{\hyperlink{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}{\_resolution}} + \mbox{\hyperlink{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}{\_origin}}[0];}
+\DoxyCodeLine{63         y = j*\mbox{\hyperlink{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}{\_resolution}} + \mbox{\hyperlink{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}{\_origin}}[1];}
+\DoxyCodeLine{64     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOccupancyGrid2d_a42aa5a3e6d765229d516040dd8e69746}\label{classOccupancyGrid2d_a42aa5a3e6d765229d516040dd8e69746}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!get\_resolution@{get\_resolution}}
+\index{get\_resolution@{get\_resolution}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{get\_resolution()}{get\_resolution()}}
+{\footnotesize\ttfamily float Occupancy\+Grid2d\+::get\+\_\+resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get map resolution 
+
+
+
+Definition at line 67 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68     \{}
+\DoxyCodeLine{69         \textcolor{keywordflow}{return} \mbox{\hyperlink{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}{\_resolution}};}
+\DoxyCodeLine{70     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOccupancyGrid2d_a6fa6ba4bd6d9a05f220c6ae5d7a9bbad}\label{classOccupancyGrid2d_a6fa6ba4bd6d9a05f220c6ae5d7a9bbad}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily int Occupancy\+Grid2d\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get map width 
+
+
+
+Definition at line 73 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{return} \mbox{\hyperlink{classOccupancyGrid2d_ace2446f78c307726dc67cfabee942362}{\_width}};}
+\DoxyCodeLine{76     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOccupancyGrid2d_ad606b838abdf655b05123dc22fd537d4}\label{classOccupancyGrid2d_ad606b838abdf655b05123dc22fd537d4}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily int Occupancy\+Grid2d\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get map height 
+
+
+
+Definition at line 79 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80     \{}
+\DoxyCodeLine{81         \textcolor{keywordflow}{return} \mbox{\hyperlink{classOccupancyGrid2d_a69ec4be155c650301e9d375f2783b3f3}{\_height}};}
+\DoxyCodeLine{82     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOccupancyGrid2d_a6396b66ecc1228bb9a0e92b020c85092}\label{classOccupancyGrid2d_a6396b66ecc1228bb9a0e92b020c85092}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!operator()@{operator()}}
+\index{operator()@{operator()}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int\& Occupancy\+Grid2d\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload () operator to access grid cell at index (i,j) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row index of the map \\
+\hline
+{\em j} & column index of the map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the value at cell (i,j) in the map 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93         \textcolor{keywordflow}{return} \mbox{\hyperlink{classOccupancyGrid2d_a3ab015d20a648dfa1f7128b42a25e857}{\_data}}[i*\mbox{\hyperlink{classOccupancyGrid2d_ace2446f78c307726dc67cfabee942362}{\_width}}+j];}
+\DoxyCodeLine{94     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classOccupancyGrid2d_aa4ebea68b6fea03f3ca8d218dec8e7d8}\label{classOccupancyGrid2d_aa4ebea68b6fea03f3ca8d218dec8e7d8}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!operator()@{operator()}}
+\index{operator()@{operator()}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int\& Occupancy\+Grid2d\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+Definition at line 99 of file occupancy\+\_\+grid2d.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100     \{}
+\DoxyCodeLine{101         \textcolor{keywordflow}{return} \mbox{\hyperlink{classOccupancyGrid2d_a3ab015d20a648dfa1f7128b42a25e857}{\_data}}[i];}
+\DoxyCodeLine{102     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classOccupancyGrid2d_a3ab015d20a648dfa1f7128b42a25e857}\label{classOccupancyGrid2d_a3ab015d20a648dfa1f7128b42a25e857}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!\_data@{\_data}}
+\index{\_data@{\_data}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{\_data}{\_data}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Occupancy\+Grid2d\+::\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2d occupancy probability data stored in row-\/major order linearly 
+
+
+
+Definition at line 106 of file occupancy\+\_\+grid2d.\+h.
+
+\mbox{\Hypertarget{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}\label{classOccupancyGrid2d_a5ab214977827765df462ff43fe7954e3}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!\_resolution@{\_resolution}}
+\index{\_resolution@{\_resolution}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{\_resolution}{\_resolution}}
+{\footnotesize\ttfamily float Occupancy\+Grid2d\+::\+\_\+resolution\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map resolution 
+
+
+
+Definition at line 109 of file occupancy\+\_\+grid2d.\+h.
+
+\mbox{\Hypertarget{classOccupancyGrid2d_ace2446f78c307726dc67cfabee942362}\label{classOccupancyGrid2d_ace2446f78c307726dc67cfabee942362}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!\_width@{\_width}}
+\index{\_width@{\_width}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{\_width}{\_width}}
+{\footnotesize\ttfamily int Occupancy\+Grid2d\+::\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map width as number of map columns 
+
+
+
+Definition at line 112 of file occupancy\+\_\+grid2d.\+h.
+
+\mbox{\Hypertarget{classOccupancyGrid2d_a69ec4be155c650301e9d375f2783b3f3}\label{classOccupancyGrid2d_a69ec4be155c650301e9d375f2783b3f3}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!\_height@{\_height}}
+\index{\_height@{\_height}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{\_height}{\_height}}
+{\footnotesize\ttfamily int Occupancy\+Grid2d\+::\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map height as number of map rows 
+
+
+
+Definition at line 115 of file occupancy\+\_\+grid2d.\+h.
+
+\mbox{\Hypertarget{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}\label{classOccupancyGrid2d_a6479f401551a2d11006d13ea7d3b989d}} 
+\index{OccupancyGrid2d@{OccupancyGrid2d}!\_origin@{\_origin}}
+\index{\_origin@{\_origin}!OccupancyGrid2d@{OccupancyGrid2d}}
+\doxysubsubsection{\texorpdfstring{\_origin}{\_origin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} Occupancy\+Grid2d\+::\+\_\+origin\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+map origin in world coordinates 
+
+
+
+Definition at line 118 of file occupancy\+\_\+grid2d.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/planning\+\_\+lib/\mbox{\hyperlink{occupancy__grid2d_8h}{occupancy\+\_\+grid2d.\+h}}\end{DoxyCompactItemize}

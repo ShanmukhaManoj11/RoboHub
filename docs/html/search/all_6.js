@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['operator_5b_5d_11',['operator[]',['../classPoint.html#a1e22428b3f62580c493644c645c72ffa',1,'Point::operator[](int i)'],['../classPoint.html#abf948f520e6e6b6969e510adc351f00e',1,'Point::operator[](int i) const']]]
+  ['get_5fheight_29',['get_height',['../classOccupancyGrid2d.html#ad606b838abdf655b05123dc22fd537d4',1,'OccupancyGrid2d']]],
+  ['get_5fnormals_30',['get_normals',['../classNormalEstimator.html#ae6290107cca78bb0b6c6014947164d07',1,'NormalEstimator']]],
+  ['get_5fresolution_31',['get_resolution',['../classOccupancyGrid2d.html#a42aa5a3e6d765229d516040dd8e69746',1,'OccupancyGrid2d']]],
+  ['get_5fstop_5fpoint_32',['get_stop_point',['../classRRTPlanner2d.html#ad636bd29cbd5396fba4e38785b3b3d58',1,'RRTPlanner2d']]],
+  ['get_5fwidth_33',['get_width',['../classOccupancyGrid2d.html#a6fa6ba4bd6d9a05f220c6ae5d7a9bbad',1,'OccupancyGrid2d']]]
 ];

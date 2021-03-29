@@ -1,0 +1,77 @@
+\hypertarget{point__utils_8h}{}\doxysection{include/pointcloud\+\_\+lib/point\+\_\+utils.h File Reference}
+\label{point__utils_8h}\index{include/pointcloud\_lib/point\_utils.h@{include/pointcloud\_lib/point\_utils.h}}
+{\ttfamily \#include \char`\"{}data\+\_\+structures/point\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Dense$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$unsigned int d, class T $>$ }\\\mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \mbox{\hyperlink{point__utils_8h_a05331bcd88dd11396299837f87678c27}{compute\+\_\+mean}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&pointvec)
+\begin{DoxyCompactList}\small\item\em compute mean of points \end{DoxyCompactList}\item 
+{\footnotesize template$<$unsigned int d, class T $>$ }\\Eigen\+::\+Matrix$<$ T, d, d $>$ \mbox{\hyperlink{point__utils_8h_a91b30cc107690ff98957cd5c9e54e836}{compute\+\_\+covariance\+\_\+matrix}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&pointvec)
+\begin{DoxyCompactList}\small\item\em compute covariance matrix given a vector points \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{point__utils_8h_a05331bcd88dd11396299837f87678c27}\label{point__utils_8h_a05331bcd88dd11396299837f87678c27}} 
+\index{point\_utils.h@{point\_utils.h}!compute\_mean@{compute\_mean}}
+\index{compute\_mean@{compute\_mean}!point\_utils.h@{point\_utils.h}}
+\doxysubsubsection{\texorpdfstring{compute\_mean()}{compute\_mean()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}}$<$d, T$>$ compute\+\_\+mean (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&}]{pointvec }\end{DoxyParamCaption})}
+
+
+
+compute mean of points 
+
+
+
+Definition at line 11 of file point\+\_\+utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \mbox{\hyperlink{classPoint}{Point<d, T>}} mean;}
+\DoxyCodeLine{14     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} p: pointvec) mean += p;}
+\DoxyCodeLine{15     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) mean[i] /= pointvec.size();}
+\DoxyCodeLine{16     \textcolor{keywordflow}{return} mean;}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{point__utils_8h_a91b30cc107690ff98957cd5c9e54e836}\label{point__utils_8h_a91b30cc107690ff98957cd5c9e54e836}} 
+\index{point\_utils.h@{point\_utils.h}!compute\_covariance\_matrix@{compute\_covariance\_matrix}}
+\index{compute\_covariance\_matrix@{compute\_covariance\_matrix}!point\_utils.h@{point\_utils.h}}
+\doxysubsubsection{\texorpdfstring{compute\_covariance\_matrix()}{compute\_covariance\_matrix()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+Eigen\+::\+Matrix$<$T, d, d$>$ compute\+\_\+covariance\+\_\+matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&}]{pointvec }\end{DoxyParamCaption})}
+
+
+
+compute covariance matrix given a vector points 
+
+
+
+Definition at line 23 of file point\+\_\+utils.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{comment}{// covariance mat cov = ATranspose * A, where A = [[x11,x12,...,x1d],[x21,x22,...,x2d],...] -\/ nxd matrix, x1 = point1-\/mean }}
+\DoxyCodeLine{26     Eigen::Matrix<T, d, d> cov;}
+\DoxyCodeLine{27     \mbox{\hyperlink{classPoint}{Point<d, T>}} mean = \mbox{\hyperlink{point__utils_8h_a05331bcd88dd11396299837f87678c27}{compute\_mean}}(pointvec);}
+\DoxyCodeLine{28     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i)}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<=i; ++j)}
+\DoxyCodeLine{31         \{}
+\DoxyCodeLine{32             cov(i, j) = 0;}
+\DoxyCodeLine{33             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} p: pointvec)}
+\DoxyCodeLine{34             \{}
+\DoxyCodeLine{35                 cov(i, j) += (p[i]-\/mean[i])*(p[j]-\/mean[j]);}
+\DoxyCodeLine{36             \}}
+\DoxyCodeLine{37             cov(i, j) /= pointvec.size();}
+\DoxyCodeLine{38             cov(j, i) = cov(i, j);}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} cov;}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}

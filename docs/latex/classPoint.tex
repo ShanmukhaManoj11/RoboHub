@@ -13,24 +13,38 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classPoint_a40af589f7f0a4498957b5a417a4170a3}{Point}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classPoint_a160d4746e1bbb9965eb267009d2fb4a0}{Point}} (std\+::vector$<$ T $>$ \&v)
 \item 
 \mbox{\hyperlink{classPoint_ab6bddcfaffa2b35ba35020fff686b7c5}{Point}} (std\+::vector$<$ T $>$ \&\&v)
 \item 
 T \& \mbox{\hyperlink{classPoint_a1e22428b3f62580c493644c645c72ffa}{operator\mbox{[}$\,$\mbox{]}}} (int i)
-\item 
+\begin{DoxyCompactList}\small\item\em overload \mbox{[}\mbox{]} operator to access element in $i^{th}$ dimension \end{DoxyCompactList}\item 
 const T \& \mbox{\hyperlink{classPoint_abf948f520e6e6b6969e510adc351f00e}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
 \item 
-double \mbox{\hyperlink{classPoint_ac16257eb2e92c45d79e076c8c6ebab7f}{distance\+\_\+to}} (const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point) const
-\item 
-bool \mbox{\hyperlink{classPoint_a4d9c1f6c47e1088805331f5e59b4be5b}{is\+\_\+equal\+\_\+to}} (const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&point)
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{classPoint_a6c7c73a9b2a970f8b91e8c2d647b60c3}{distance\+\_\+to}} (const \mbox{\hyperlink{classPoint}{Point}} \&point) const
+\begin{DoxyCompactList}\small\item\em compute distance from {\itshape this} point to a query point \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPoint_a636251d703d8af8ba5ccc91faa0dad87}{is\+\_\+equal\+\_\+to}} (const \mbox{\hyperlink{classPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em check if query point is equal to {\itshape this} point \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint_a8ab12dea00752b4ca996fba002fd205b}{operator+}} (const \mbox{\hyperlink{classPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em overload + operator to add {\itshape this} point and an input point \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint_a3e384ea6a79af3a7eabfde21062d5002}{operator-\/}} (const \mbox{\hyperlink{classPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em overload -\/ operator to subtract an input point from {\itshape this} point \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint_a18c729837990a0318ebe1217a2fcd893}{operator-\/}} ()
+\begin{DoxyCompactList}\small\item\em overload -\/ (unary) operator to negate {\itshape this} point \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint_aeebb9f9646d0e06cdeaf2c0bd0e75ec8}{operator$\ast$}} (T k)
+\begin{DoxyCompactList}\small\item\em overload $\ast$ operator to mulitply a scalar value to elements of {\itshape this} point \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPoint_a17435086fd66366de86a73c08f55421d}{magnitude}} ()
+\begin{DoxyCompactList}\small\item\em compute magnitude of {\itshape this} point \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classPoint_a0a454f14e75c71d0f8d4da1e2c3c4ca0}{dot}} (const \mbox{\hyperlink{classPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em compute dot product of two points \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPoint_a0d4e15f007fef5bf03c3002df1b95495}{operator+=}} (const \mbox{\hyperlink{classPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em overload += operator for inplace addition operaton \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em {\ttfamily d}-\/dimensional data a vector of elements of type {\ttfamily T} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -39,7 +53,9 @@ class Point$<$ d, T $>$}
 
 \mbox{\hyperlink{classPoint}{Point}} template class. 
 
-Definition at line 12 of file point\+\_\+types.\+h.
+As an example, a 3 dimensional point with float values can be stored as a {\ttfamily \mbox{\hyperlink{classPoint}{Point}}$<$3, float$>$} object 
+
+Definition at line 14 of file point\+\_\+types.\+h.
 
 
 
@@ -53,11 +69,15 @@ Definition at line 12 of file point\+\_\+types.\+h.
 
 
 
-Definition at line 18 of file point\+\_\+types.\+h.
+default constructor 
+
+
+
+Definition at line 24 of file point\+\_\+types.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{18 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(d, 0) \{\}}
+\DoxyCodeLine{24 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(d, 0) \{\}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classPoint_a160d4746e1bbb9965eb267009d2fb4a0}\label{classPoint_a160d4746e1bbb9965eb267009d2fb4a0}} 
@@ -67,13 +87,13 @@ Definition at line 18 of file point\+\_\+types.\+h.
 {\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
 \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::\mbox{\hyperlink{classPoint}{Point}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-
-Definition at line 20 of file point\+\_\+types.\+h.
+Definition at line 29 of file point\+\_\+types.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{20 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(v) \{\}}
+\DoxyCodeLine{29 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(v) \{\}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classPoint_ab6bddcfaffa2b35ba35020fff686b7c5}\label{classPoint_ab6bddcfaffa2b35ba35020fff686b7c5}} 
@@ -83,13 +103,13 @@ Definition at line 20 of file point\+\_\+types.\+h.
 {\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
 \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::\mbox{\hyperlink{classPoint}{Point}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&\&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-
-Definition at line 22 of file point\+\_\+types.\+h.
+Definition at line 34 of file point\+\_\+types.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{22 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(v) \{\}}
+\DoxyCodeLine{34 : \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}(v) \{\}}
 
 \end{DoxyCode}
 
@@ -104,14 +124,18 @@ T\& \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator\mbox{[}$\,$\mbo
 
 
 
-Definition at line 24 of file point\+\_\+types.\+h.
+overload \mbox{[}\mbox{]} operator to access element in $i^{th}$ dimension 
+
+
+
+Definition at line 39 of file point\+\_\+types.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{25     \{}
-\DoxyCodeLine{26         \textcolor{keywordflow}{if}(i<0 || i>=d) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"index out of bounds"});}
-\DoxyCodeLine{27         \textcolor{keywordflow}{return} \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i];}
-\DoxyCodeLine{28     \}}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \textcolor{keywordflow}{if}(i<0 || i>=d) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"index out of bounds"});}
+\DoxyCodeLine{42         \textcolor{keywordflow}{return} \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i];}
+\DoxyCodeLine{43     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classPoint_abf948f520e6e6b6969e510adc351f00e}\label{classPoint_abf948f520e6e6b6969e510adc351f00e}} 
@@ -121,19 +145,19 @@ Definition at line 24 of file point\+\_\+types.\+h.
 {\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
 const T\& \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
 
-
-Definition at line 30 of file point\+\_\+types.\+h.
+Definition at line 48 of file point\+\_\+types.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{31     \{}
-\DoxyCodeLine{32         \textcolor{keywordflow}{if}(i<0 || i>=d) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"index out of bounds"});}
-\DoxyCodeLine{33         \textcolor{keywordflow}{return} \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i];}
-\DoxyCodeLine{34     \}}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if}(i<0 || i>=d) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"index out of bounds"});}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} \mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i];}
+\DoxyCodeLine{52     \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classPoint_ac16257eb2e92c45d79e076c8c6ebab7f}\label{classPoint_ac16257eb2e92c45d79e076c8c6ebab7f}} 
+\mbox{\Hypertarget{classPoint_a6c7c73a9b2a970f8b91e8c2d647b60c3}\label{classPoint_a6c7c73a9b2a970f8b91e8c2d647b60c3}} 
 \index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!distance\_to@{distance\_to}}
 \index{distance\_to@{distance\_to}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
 \doxysubsubsection{\texorpdfstring{distance\_to()}{distance\_to()}}
@@ -142,18 +166,30 @@ double \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::distance\+\_\+to (\be
 
 
 
-Definition at line 36 of file point\+\_\+types.\+h.
+compute distance from {\itshape this} point to a query point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & query point to find the distance to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+distance to the input point 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file point\+\_\+types.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{37     \{}
-\DoxyCodeLine{38         \textcolor{keywordtype}{double} sq\_dist = 0.0;}
-\DoxyCodeLine{39         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) sq\_dist += (this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] -\/ point.\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i])*(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] -\/ point.\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]);}
-\DoxyCodeLine{40         \textcolor{keywordflow}{return} std::sqrt(sq\_dist);}
-\DoxyCodeLine{41     \}}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62         \textcolor{keywordtype}{double} sq\_dist = 0.0;}
+\DoxyCodeLine{63         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) sq\_dist += (this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] -\/ point[i])*(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] -\/ point[i]);}
+\DoxyCodeLine{64         \textcolor{keywordflow}{return} std::sqrt(sq\_dist);}
+\DoxyCodeLine{65     \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classPoint_a4d9c1f6c47e1088805331f5e59b4be5b}\label{classPoint_a4d9c1f6c47e1088805331f5e59b4be5b}} 
+\mbox{\Hypertarget{classPoint_a636251d703d8af8ba5ccc91faa0dad87}\label{classPoint_a636251d703d8af8ba5ccc91faa0dad87}} 
 \index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!is\_equal\_to@{is\_equal\_to}}
 \index{is\_equal\_to@{is\_equal\_to}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
 \doxysubsubsection{\texorpdfstring{is\_equal\_to()}{is\_equal\_to()}}
@@ -162,14 +198,228 @@ bool \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::is\+\_\+equal\+\_\+to (
 
 
 
-Definition at line 43 of file point\+\_\+types.\+h.
+check if query point is equal to {\itshape this} point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & query point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if input point is exactly equal to {\itshape this} point, else returns false 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file point\+\_\+types.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{44     \{}
-\DoxyCodeLine{45         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]!=point.\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{46         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{47     \}}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]!=point[i]) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{76         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{77     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a8ab12dea00752b4ca996fba002fd205b}\label{classPoint_a8ab12dea00752b4ca996fba002fd205b}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload + operator to add {\itshape this} point and an input point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & point to add to {\itshape this} point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a new point that is sum of {\itshape this} point and the input point 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87         \mbox{\hyperlink{classPoint}{Point}} res;}
+\DoxyCodeLine{88         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) res[i] = (this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] + point[i]);}
+\DoxyCodeLine{89         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{90     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a3e384ea6a79af3a7eabfde21062d5002}\label{classPoint_a3e384ea6a79af3a7eabfde21062d5002}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload -\/ operator to subtract an input point from {\itshape this} point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & point to subtract from {\itshape this} point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a new point that is subtraction of {\itshape this} point and the input point 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99     \{}
+\DoxyCodeLine{100         \mbox{\hyperlink{classPoint}{Point}} res;}
+\DoxyCodeLine{101         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) res[i] = (this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] -\/ point[i]);}
+\DoxyCodeLine{102         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{103     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a18c729837990a0318ebe1217a2fcd893}\label{classPoint_a18c729837990a0318ebe1217a2fcd893}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload -\/ (unary) operator to negate {\itshape this} point 
+
+\begin{DoxyReturn}{Returns}
+returns a new point that is negative of {\itshape this} point 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111     \{}
+\DoxyCodeLine{112         \mbox{\hyperlink{classPoint}{Point}} res;}
+\DoxyCodeLine{113         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) res[i] = -\/(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]);}
+\DoxyCodeLine{114         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{115     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_aeebb9f9646d0e06cdeaf2c0bd0e75ec8}\label{classPoint_aeebb9f9646d0e06cdeaf2c0bd0e75ec8}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{T}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload $\ast$ operator to mulitply a scalar value to elements of {\itshape this} point 
+
+\begin{DoxyReturn}{Returns}
+returns the scaled point 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123     \{}
+\DoxyCodeLine{124         \mbox{\hyperlink{classPoint}{Point}} res;}
+\DoxyCodeLine{125         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) res[i] = k*(this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i]);}
+\DoxyCodeLine{126         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{127     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a17435086fd66366de86a73c08f55421d}\label{classPoint_a17435086fd66366de86a73c08f55421d}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{magnitude()}{magnitude()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+double \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::magnitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+compute magnitude of {\itshape this} point 
+
+\begin{DoxyReturn}{Returns}
+magnitude as double value 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135     \{}
+\DoxyCodeLine{136         \textcolor{keywordflow}{return} \mbox{\hyperlink{classPoint_a6c7c73a9b2a970f8b91e8c2d647b60c3}{distance\_to}}(\mbox{\hyperlink{classPoint_a40af589f7f0a4498957b5a417a4170a3}{Point}}());}
+\DoxyCodeLine{137     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a0a454f14e75c71d0f8d4da1e2c3c4ca0}\label{classPoint_a0a454f14e75c71d0f8d4da1e2c3c4ca0}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!dot@{dot}}
+\index{dot@{dot}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+T \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+compute dot product of two points 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & input point to perform dot product with {\itshape this} point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns scalar result of the dot product 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{146     \{}
+\DoxyCodeLine{147         T res = 0;}
+\DoxyCodeLine{148         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) res += (this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] * point[i]);}
+\DoxyCodeLine{149         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{150     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPoint_a0d4e15f007fef5bf03c3002df1b95495}\label{classPoint_a0d4e15f007fef5bf03c3002df1b95495}} 
+\index{Point$<$ d, T $>$@{Point$<$ d, T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Point$<$ d, T $>$@{Point$<$ d, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$unsigned int d, class T $>$ \\
+void \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload += operator for inplace addition operaton 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & input point to add to {\itshape this} point in-\/place \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 157 of file point\+\_\+types.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) this-\/>\mbox{\hyperlink{classPoint_ae81fbb9ee83f435c764da7ffc1b1289f}{x}}[i] += point[i];}
+\DoxyCodeLine{160     \}}
 
 \end{DoxyCode}
 
@@ -184,7 +434,11 @@ std\+::vector$<$T$>$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$\+::x\hspac
 
 
 
-Definition at line 15 of file point\+\_\+types.\+h.
+{\ttfamily d}-\/dimensional data a vector of elements of type {\ttfamily T} 
+
+
+
+Definition at line 18 of file point\+\_\+types.\+h.
 
 
 

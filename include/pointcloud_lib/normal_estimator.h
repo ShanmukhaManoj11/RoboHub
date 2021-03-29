@@ -4,6 +4,24 @@
 #include "data_structures/kdtree.h"
 #include "pointcloud_lib/point_utils.h"
 
+/**
+* @brief Normal estimator class
+*
+* Given a pointcloud as a vector points, this object can be used to extract normals at every point.  
+* Normal at a point is estimated based on negiborhood points around that point  
+* Given a vector of points around a point in a small neighborhood (say within 0.1 m around the point), then surface normal 
+* at that point can be estimated from `SVD` of the covariance matrix of the points vector  
+* 
+* For a set of n 3d points in the neighborhood of 0.1 m, then define marix `A` \f$\ni\f$  
+* \f[A=\left[\begin{array}{A} x_0-\bar{x} & y_0-\bar{y} & z_0-\bar{z} \\
+*		x_1-\bar{x} & y_1-\bar{y} & z_1-\bar{z} \\
+*		... & ... & ... \\
+*		x_n-\bar{x} & y_n-\bar{y} & z_n-\bar{z} \end{array}\right]
+* \f]  
+* where \f$\bar{x}=\frac{\Sigma{x_i}}{n}\f$, \f$\bar{y}=\frac{\Sigma{y_i}}{n}\f$, \f$\bar{z}=\frac{\Sigma{z_i}}{n}\f$  
+* covariance matrix can be calculated as, \f$cov=A^T A\f$  
+* then vector corresponding to the least singular value in the SVD of `cov` gives the corresponding surface normal
+*/
 template<unsigned int d, class T>
 class NormalEstimator
 {

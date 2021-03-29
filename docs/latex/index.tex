@@ -1,1 +1,25 @@
-Robo\+Hub is a collection of C++ implementations of several robotics algorithms 
+Robo\+Hub is a collection of C++ implementations of algorithms used in robotics\hypertarget{index_autotoc_md0}{}\doxysubsection{Build and run content}\label{index_autotoc_md0}
+\hypertarget{index_autotoc_md1}{}\doxysubsubsection{1. Using docker (\+Recommended)}\label{index_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# build content}
+\DoxyCodeLine{\$ ./docker\_build.sh}
+\DoxyCodeLine{\# run docker interactvely}
+\DoxyCodeLine{\$ ./docker\_run.sh}
+\end{DoxyCode}
+
+
+All the built content can be found in {\ttfamily /workspace/build/} directory when the docker terminal is up\hypertarget{index_autotoc_md2}{}\doxysubsubsection{2. Native build (dependencies might need to be installed separately)}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ mkdir build \&\& cd build}
+\DoxyCodeLine{\$ cmake ..}
+\DoxyCodeLine{\$ make}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{Details}\label{index_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Currently this project doesn\textquotesingle{}t use any of the pcl or R\+OS components. All imlementations are primarily based on S\+TL and Eigen. Data generations and visualization for tests is made with python scripts (can be found in the {\ttfamily scripts} directory) that use {\ttfamily numpy} and {\ttfamily matplotlib} for 2d and {\ttfamily mayavi} for 3d visualizations
+\item A\+PI is header only. Implementations can be found in {\ttfamily include} directory
+\item All functionaly can be qualitatively and/or quantitatively tested using provided tests found in {\ttfamily tests} directory 
+\end{DoxyEnumerate}

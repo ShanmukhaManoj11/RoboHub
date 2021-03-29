@@ -1,0 +1,449 @@
+\hypertarget{classRRTPlanner2d}{}\doxysection{R\+R\+T\+Planner2d Class Reference}
+\label{classRRTPlanner2d}\index{RRTPlanner2d@{RRTPlanner2d}}
+
+
+R\+RT planner for 2d maps.  
+
+
+
+
+{\ttfamily \#include $<$rrt\+\_\+planner.\+h$>$}
+
+Inheritance diagram for R\+R\+T\+Planner2d\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRRTPlanner2d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRRTPlanner2d_ac79c8e178806deb94f3022383a187740}{R\+R\+T\+Planner2d}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} $>$ \mbox{\hyperlink{classRRTPlanner2d_a1fb94110443c6727f9af2f30448d27c9}{compute\+\_\+plan}} (\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&start, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&goal)
+\begin{DoxyCompactList}\small\item\em computes path using R\+RT from start to goal points \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::unordered\+\_\+map$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ 2, float $>$ $>$, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$ 2, float $>$ $>$ $>$ \mbox{\hyperlink{classRRTPlanner2d_a2e7ad0566f9d068acc6cdb71e0c3a593}{Node\+Parent\+Map}}
+\begin{DoxyCompactList}\small\item\em typedef to store nodes and parents for fast retrieval \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} $>$ \mbox{\hyperlink{classRRTPlanner2d_adb69e144f5759737061f828d160875e6}{rrt}} (\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&start, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&goal, int max\+\_\+iterations, double max\+\_\+step)
+\begin{DoxyCompactList}\small\item\em rrt method to compute path between start and goal points \end{DoxyCompactList}\item 
+\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \mbox{\hyperlink{classRRTPlanner2d_ad636bd29cbd5396fba4e38785b3b3d58}{get\+\_\+stop\+\_\+point}} (\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&start, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&end, double max\+\_\+step)
+\begin{DoxyCompactList}\small\item\em helper function to get the stop point on the line joining stat and end points to limit the max step between neighboring waypoints \end{DoxyCompactList}\item 
+\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \mbox{\hyperlink{classRRTPlanner2d_a1dda2f0e870f047aeae5a65fac841cf3}{ray\+\_\+trace\+\_\+sampled}} (\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&start, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&end, int nsamples)
+\begin{DoxyCompactList}\small\item\em ray tracing method that generates a set of equidistant samples on the line joining start and end points and checks for the points that donot cut an occupied cell in the map \end{DoxyCompactList}\item 
+\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \mbox{\hyperlink{classRRTPlanner2d_a2d76e5d7b50af70a73c4a99cfb797403}{ray\+\_\+trace}} (\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&start, \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&end)
+\begin{DoxyCompactList}\small\item\em ray trace procedure using bresenham ray tracing \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{point__types_8h_ac279483d1fec05461f3a6f954334b129}{Point2i}} $>$ \mbox{\hyperlink{classRRTPlanner2d_ade4bd5b2bb33d1ba33bc3b43600e22f6}{bresenham\+\_\+ray\+\_\+trace}} (int x0, int y0, int x1, int y1)
+\begin{DoxyCompactList}\small\item\em Bresenham ray tracing algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+R\+RT planner for 2d maps. 
+
+Definition at line 12 of file rrt\+\_\+planner.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classRRTPlanner2d_a2e7ad0566f9d068acc6cdb71e0c3a593}\label{classRRTPlanner2d_a2e7ad0566f9d068acc6cdb71e0c3a593}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!NodeParentMap@{NodeParentMap}}
+\index{NodeParentMap@{NodeParentMap}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{NodeParentMap}{NodeParentMap}}
+{\footnotesize\ttfamily typedef std\+::unordered\+\_\+map$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$2, float$>$ $>$, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classKDNode}{K\+D\+Node}}$<$2, float$>$ $>$ $>$ \mbox{\hyperlink{classRRTPlanner2d_a2e7ad0566f9d068acc6cdb71e0c3a593}{R\+R\+T\+Planner2d\+::\+Node\+Parent\+Map}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+typedef to store nodes and parents for fast retrieval 
+
+
+
+Definition at line 27 of file rrt\+\_\+planner.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRRTPlanner2d_ac79c8e178806deb94f3022383a187740}\label{classRRTPlanner2d_ac79c8e178806deb94f3022383a187740}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!RRTPlanner2d@{RRTPlanner2d}}
+\index{RRTPlanner2d@{RRTPlanner2d}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{RRTPlanner2d()}{RRTPlanner2d()}}
+{\footnotesize\ttfamily R\+R\+T\+Planner2d\+::\+R\+R\+T\+Planner2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 16 of file rrt\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRRTPlanner2d_a1fb94110443c6727f9af2f30448d27c9}\label{classRRTPlanner2d_a1fb94110443c6727f9af2f30448d27c9}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!compute\_plan@{compute\_plan}}
+\index{compute\_plan@{compute\_plan}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{compute\_plan()}{compute\_plan()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}}$>$ R\+R\+T\+Planner2d\+::compute\+\_\+plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{start,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{goal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+computes path using R\+RT from start to goal points 
+
+
+
+Implements \mbox{\hyperlink{classBaseGlobalPlanner2d_af69f65aa9c026419114ee117eb2c4d04}{Base\+Global\+Planner2d}}.
+
+
+
+Definition at line 21 of file rrt\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{return} \mbox{\hyperlink{classRRTPlanner2d_adb69e144f5759737061f828d160875e6}{rrt}}(start, goal, 100000, 0.5);}
+\DoxyCodeLine{24     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRRTPlanner2d_adb69e144f5759737061f828d160875e6}\label{classRRTPlanner2d_adb69e144f5759737061f828d160875e6}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!rrt@{rrt}}
+\index{rrt@{rrt}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{rrt()}{rrt()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}}$>$ R\+R\+T\+Planner2d\+::rrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{start,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{goal,  }\item[{int}]{max\+\_\+iterations,  }\item[{double}]{max\+\_\+step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+rrt method to compute path between start and goal points 
+
+A \mbox{\hyperlink{classKDTree}{K\+D\+Tree}} is used to store the nodes for fast retrieval of nearest nodes
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & start point \\
+\hline
+{\em goal} & goal point \\
+\hline
+{\em max\+\_\+iterations} & maximum iterations for the R\+RT process \\
+\hline
+{\em max\+\_\+step} & maximum step to limit step distance between neighboring waypoints \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return vector of points constituting the path 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file rrt\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         std::random\_device rd;}
+\DoxyCodeLine{43         std::mt19937 gen(rd());}
+\DoxyCodeLine{44         std::uniform\_real\_distribution<float> distrib(-\/30.0, 30.0);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{comment}{// construct a 2 dimensional tree and define a map to save parent corresponding parent nodes}}
+\DoxyCodeLine{47         \mbox{\hyperlink{classKDTree}{KDTree<2, float>}} tree;}
+\DoxyCodeLine{48         \mbox{\hyperlink{classRRTPlanner2d_a2e7ad0566f9d068acc6cdb71e0c3a593}{NodeParentMap}} node\_map;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{comment}{// insert start point to tree}}
+\DoxyCodeLine{51         \textcolor{keyword}{auto} ptr = tree.\mbox{\hyperlink{classKDTree_aa1699eb41681cec03692d6528cf8a236}{insert}}(start);}
+\DoxyCodeLine{52         node\_map.insert(\{ptr, \textcolor{keyword}{nullptr}\});}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{55         \mbox{\hyperlink{classPoint}{Point2f}} cur = start;}
+\DoxyCodeLine{56         \textcolor{keywordflow}{while}(cur.\mbox{\hyperlink{classPoint_a6c7c73a9b2a970f8b91e8c2d647b60c3}{distance\_to}}(goal)>max\_step \&\& i<max\_iterations)}
+\DoxyCodeLine{57         \{}
+\DoxyCodeLine{58             \textcolor{comment}{// generate a random point and use the goal point now and then to bias the computed path towards goal}}
+\DoxyCodeLine{59             \mbox{\hyperlink{classPoint}{Point2f}} rand\_point;}
+\DoxyCodeLine{60             \textcolor{keywordflow}{if}(i\%10==9) rand\_point = goal;}
+\DoxyCodeLine{61             \textcolor{keywordflow}{else} rand\_point = \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}}(\{distrib(gen), distrib(gen)\});}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63             \textcolor{comment}{// get closest point to the random point in the current tree}}
+\DoxyCodeLine{64             std::shared\_ptr< KDNode<2, float> > closest\_point\_ptr = tree.\mbox{\hyperlink{classKDTree_a9baf255281226b41b6c75f39ddd9f624}{search}}(rand\_point, 0);}
+\DoxyCodeLine{65             \mbox{\hyperlink{classPoint}{Point2f}} closest\_point = closest\_point\_ptr-\/>point;}
+\DoxyCodeLine{66             \textcolor{comment}{// get stop point (which is max\_step units from the retrieved closest point) on the line joining closest point and the generated random point}}
+\DoxyCodeLine{67             \textcolor{comment}{// this step limits the distance between neighboring waypoints in the final path}}
+\DoxyCodeLine{68             \mbox{\hyperlink{classPoint}{Point2f}} valid\_point = \mbox{\hyperlink{classRRTPlanner2d_ad636bd29cbd5396fba4e38785b3b3d58}{get\_stop\_point}}(closest\_point, rand\_point, max\_step);}
+\DoxyCodeLine{69             \textcolor{comment}{// use ray tracing to get the valid point on the line that stop before cutting an occupied cell}}
+\DoxyCodeLine{70             valid\_point = \mbox{\hyperlink{classRRTPlanner2d_a1dda2f0e870f047aeae5a65fac841cf3}{ray\_trace\_sampled}}(closest\_point, valid\_point, 200);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72             \textcolor{keywordflow}{if}(!valid\_point.\mbox{\hyperlink{classPoint_a636251d703d8af8ba5ccc91faa0dad87}{is\_equal\_to}}(closest\_point))}
+\DoxyCodeLine{73             \{}
+\DoxyCodeLine{74                 ptr = tree.\mbox{\hyperlink{classKDTree_aa1699eb41681cec03692d6528cf8a236}{insert}}(valid\_point);}
+\DoxyCodeLine{75                 node\_map.insert(\{ptr, closest\_point\_ptr\});}
+\DoxyCodeLine{76             \}}
+\DoxyCodeLine{77             }
+\DoxyCodeLine{78             \textcolor{comment}{// get current point in the tree that is closest to the goal}}
+\DoxyCodeLine{79             cur = tree.\mbox{\hyperlink{classKDTree_a9baf255281226b41b6c75f39ddd9f624}{search}}(goal);}
+\DoxyCodeLine{80             ++i;}
+\DoxyCodeLine{81         \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \textcolor{comment}{// retrieve path from iterating from the goal and closest point to goal in the tree using the node-\/parent map}}
+\DoxyCodeLine{84         std::vector<Point2f> path;}
+\DoxyCodeLine{85         ptr = tree.\mbox{\hyperlink{classKDTree_a9baf255281226b41b6c75f39ddd9f624}{search}}(goal, 0); }
+\DoxyCodeLine{86         cur = ptr-\/>point;}
+\DoxyCodeLine{87         \textcolor{keywordflow}{if}(cur.\mbox{\hyperlink{classPoint_a6c7c73a9b2a970f8b91e8c2d647b60c3}{distance\_to}}(goal)<=max\_step) path.push\_back(goal);}
+\DoxyCodeLine{88         \textcolor{keywordflow}{while}(ptr!=\textcolor{keyword}{nullptr} \&\& node\_map.find(ptr)!=node\_map.end())}
+\DoxyCodeLine{89         \{}
+\DoxyCodeLine{90             path.push\_back(ptr-\/>point);}
+\DoxyCodeLine{91             ptr = node\_map[ptr];}
+\DoxyCodeLine{92         \}}
+\DoxyCodeLine{93         \textcolor{keywordflow}{return} path;}
+\DoxyCodeLine{94     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRRTPlanner2d_ad636bd29cbd5396fba4e38785b3b3d58}\label{classRRTPlanner2d_ad636bd29cbd5396fba4e38785b3b3d58}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!get\_stop\_point@{get\_stop\_point}}
+\index{get\_stop\_point@{get\_stop\_point}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{get\_stop\_point()}{get\_stop\_point()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} R\+R\+T\+Planner2d\+::get\+\_\+stop\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{start,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{end,  }\item[{double}]{max\+\_\+step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+helper function to get the stop point on the line joining stat and end points to limit the max step between neighboring waypoints 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & start point \\
+\hline
+{\em end} & end point \\
+\hline
+{\em max\+\_\+step} & maximum step for the stop point on the line joining start and end points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the stop point 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file rrt\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105     \{}
+\DoxyCodeLine{106         \textcolor{keywordtype}{double} dist = start.\mbox{\hyperlink{classPoint_a6c7c73a9b2a970f8b91e8c2d647b60c3}{distance\_to}}(end);}
+\DoxyCodeLine{107         \textcolor{keywordflow}{if}(dist<=max\_step) \textcolor{keywordflow}{return} end;}
+\DoxyCodeLine{108         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{109         \{}
+\DoxyCodeLine{110             \mbox{\hyperlink{classPoint}{Point2f}} diff = end -\/ start;}
+\DoxyCodeLine{111             \textcolor{keywordflow}{return} start + \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}}(\{diff[0]*float(max\_step/dist), diff[1]*float(max\_step/dist)\});}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRRTPlanner2d_a1dda2f0e870f047aeae5a65fac841cf3}\label{classRRTPlanner2d_a1dda2f0e870f047aeae5a65fac841cf3}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!ray\_trace\_sampled@{ray\_trace\_sampled}}
+\index{ray\_trace\_sampled@{ray\_trace\_sampled}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{ray\_trace\_sampled()}{ray\_trace\_sampled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} R\+R\+T\+Planner2d\+::ray\+\_\+trace\+\_\+sampled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{start,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{end,  }\item[{int}]{nsamples }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+ray tracing method that generates a set of equidistant samples on the line joining start and end points and checks for the points that donot cut an occupied cell in the map 
+
+\begin{DoxyNote}{Note}
+Since this method samples the line into equidistant points, there can be cases where the generated points miss the occupied cells completely. A better procedure is needed
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & start point \\
+\hline
+{\em end} & end point \\
+\hline
+{\em nsamples} & number of equidistant samples to be used on the line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the first valid point on the line joining start and end that doesn\textquotesingle{}t cut an occupied cell when traversed from start point 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file rrt\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127     \{}
+\DoxyCodeLine{128         \mbox{\hyperlink{classPoint}{Point2f}} diff = end-\/start;}
+\DoxyCodeLine{129         \textcolor{keywordtype}{float} d = 1.0/\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(nsamples);}
+\DoxyCodeLine{130         \textcolor{keywordtype}{float} d1 = 0.0;}
+\DoxyCodeLine{131         \textcolor{keywordflow}{while}(d1<=1)}
+\DoxyCodeLine{132         \{}
+\DoxyCodeLine{133             \mbox{\hyperlink{classPoint}{Point2f}} valid\_point = start + diff*d1;}
+\DoxyCodeLine{134             \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{135             \textcolor{keywordflow}{if}(\mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_add5aad4b60a60e6e93ebdd4db1b13073}{xy\_to\_ij}}(valid\_point[0], valid\_point[1], i, j))}
+\DoxyCodeLine{136             \{}
+\DoxyCodeLine{137                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}(i, j)!=0) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{138             \}}
+\DoxyCodeLine{139             \textcolor{keywordflow}{else} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{140             d1 += d;}
+\DoxyCodeLine{141         \}}
+\DoxyCodeLine{142         d1 -\/= d;}
+\DoxyCodeLine{143         \textcolor{keywordflow}{return} start + diff*d1;}
+\DoxyCodeLine{144     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRRTPlanner2d_a2d76e5d7b50af70a73c4a99cfb797403}\label{classRRTPlanner2d_a2d76e5d7b50af70a73c4a99cfb797403}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!ray\_trace@{ray\_trace}}
+\index{ray\_trace@{ray\_trace}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{ray\_trace()}{ray\_trace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} R\+R\+T\+Planner2d\+::ray\+\_\+trace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{start,  }\item[{\mbox{\hyperlink{point__types_8h_ae8af601f9c656ff8a3202809164b126d}{Point2f}} \&}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+ray trace procedure using bresenham ray tracing 
+
+\begin{DoxyNote}{Note}
+This method retreives all the cells on the descritized map that the line passes through and is better approach than the sampled implementation.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]This call is sometimes causing seg-\/fault. Debug the implementation\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & start point \\
+\hline
+{\em end} & end point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the first valid point on the line joining start and end that doesn\textquotesingle{}t cut an occupied cell when traversed from start point 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file rrt\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159         \textcolor{keywordtype}{int} height = \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_ad606b838abdf655b05123dc22fd537d4}{get\_height}}(), width = \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_a6fa6ba4bd6d9a05f220c6ae5d7a9bbad}{get\_width}}();}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161         \mbox{\hyperlink{classPoint}{Point2i}} start\_i;}
+\DoxyCodeLine{162         \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_add5aad4b60a60e6e93ebdd4db1b13073}{xy\_to\_ij}}(start[0], start[1], start\_i[0], start\_i[1]);}
+\DoxyCodeLine{163         start\_i[0] = std::min(height-\/1, std::max(0, start\_i[0]));}
+\DoxyCodeLine{164         start\_i[1] = std::min(width-\/1, std::max(0, start\_i[1]));}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \mbox{\hyperlink{classPoint}{Point2i}} end\_i;}
+\DoxyCodeLine{167         \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_add5aad4b60a60e6e93ebdd4db1b13073}{xy\_to\_ij}}(end[0], end[1], end\_i[0], end\_i[1]);}
+\DoxyCodeLine{168         end\_i[0] = std::min(height-\/1, std::max(0, end\_i[0]));}
+\DoxyCodeLine{169         end\_i[1] = std::min(width-\/1, std::max(0, end\_i[1]));}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171         \textcolor{keyword}{auto} ray\_points = \mbox{\hyperlink{classRRTPlanner2d_ade4bd5b2bb33d1ba33bc3b43600e22f6}{bresenham\_ray\_trace}}(start\_i[0], start\_i[1], end\_i[0], end\_i[1]);}
+\DoxyCodeLine{172         \textcolor{keywordflow}{if}(!ray\_points.empty())}
+\DoxyCodeLine{173         \{}
+\DoxyCodeLine{174             \textcolor{keywordflow}{if}(ray\_points[0].is\_equal\_to(start\_i))}
+\DoxyCodeLine{175             \{}
+\DoxyCodeLine{176                 \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{177                 \textcolor{keywordflow}{while}(i<ray\_points.size() \&\& \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}(ray\_points[i][0], ray\_points[i][1])==0)}
+\DoxyCodeLine{178                 \{}
+\DoxyCodeLine{179                     ++i;}
+\DoxyCodeLine{180                 \}}
+\DoxyCodeLine{181                 -\/-\/i;}
+\DoxyCodeLine{182                 \mbox{\hyperlink{classPoint}{Point2f}} stop\_point;}
+\DoxyCodeLine{183                 \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_ae868f67f9a98f53c007f61f848371813}{ij\_to\_xy}}(ray\_points[i][0], ray\_points[i][1], stop\_point[0], stop\_point[1]);}
+\DoxyCodeLine{184                 \textcolor{keywordflow}{return} stop\_point;}
+\DoxyCodeLine{185             \}}
+\DoxyCodeLine{186             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(ray\_points[ray\_points.size()-\/1].is\_equal\_to(start\_i))}
+\DoxyCodeLine{187             \{}
+\DoxyCodeLine{188                 \textcolor{keywordtype}{int} i=ray\_points.size()-\/1;}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{while}(i>=0 \&\& \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}(ray\_points[i][0], ray\_points[i][1])==0)}
+\DoxyCodeLine{190                 \{}
+\DoxyCodeLine{191                     -\/-\/i;}
+\DoxyCodeLine{192                 \}}
+\DoxyCodeLine{193                 ++i;}
+\DoxyCodeLine{194                 \mbox{\hyperlink{classPoint}{Point2f}} stop\_point;}
+\DoxyCodeLine{195                 \mbox{\hyperlink{classBaseGlobalPlanner2d_aaf30bec93eb0085ee285e5682d89488a}{\_map}}.\mbox{\hyperlink{classOccupancyGrid2d_ae868f67f9a98f53c007f61f848371813}{ij\_to\_xy}}(ray\_points[i][0], ray\_points[i][1], stop\_point[0], stop\_point[1]);}
+\DoxyCodeLine{196                 \textcolor{keywordflow}{return} stop\_point;}
+\DoxyCodeLine{197             \}}
+\DoxyCodeLine{198         \}}
+\DoxyCodeLine{199         \textcolor{keywordflow}{return} start;}
+\DoxyCodeLine{200     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRRTPlanner2d_ade4bd5b2bb33d1ba33bc3b43600e22f6}\label{classRRTPlanner2d_ade4bd5b2bb33d1ba33bc3b43600e22f6}} 
+\index{RRTPlanner2d@{RRTPlanner2d}!bresenham\_ray\_trace@{bresenham\_ray\_trace}}
+\index{bresenham\_ray\_trace@{bresenham\_ray\_trace}!RRTPlanner2d@{RRTPlanner2d}}
+\doxysubsubsection{\texorpdfstring{bresenham\_ray\_trace()}{bresenham\_ray\_trace()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{point__types_8h_ac279483d1fec05461f3a6f954334b129}{Point2i}}$>$ R\+R\+T\+Planner2d\+::bresenham\+\_\+ray\+\_\+trace (\begin{DoxyParamCaption}\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{x1,  }\item[{int}]{y1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Bresenham ray tracing algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & row index of first point \\
+\hline
+{\em y0} & column index of first point \\
+\hline
+{\em x1} & row index of second point \\
+\hline
+{\em y1} & column index of second point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return vector cell indices that the line betwee first and second points passes through 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file rrt\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{212     \{}
+\DoxyCodeLine{213         \textcolor{keywordtype}{bool} steep = (std::abs(y1-\/y0) > std::abs(x1-\/x0));}
+\DoxyCodeLine{214         \textcolor{keywordflow}{if}(steep)}
+\DoxyCodeLine{215         \{}
+\DoxyCodeLine{216             std::swap(x0, y0);}
+\DoxyCodeLine{217             std::swap(x1, y1);}
+\DoxyCodeLine{218         \}}
+\DoxyCodeLine{219         }
+\DoxyCodeLine{220         \textcolor{keywordflow}{if}(x0>x1)}
+\DoxyCodeLine{221         \{}
+\DoxyCodeLine{222             std::swap(x0, x1);}
+\DoxyCodeLine{223             std::swap(y0, y1);}
+\DoxyCodeLine{224         \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226         \textcolor{keywordtype}{int} dx = x1-\/x0;}
+\DoxyCodeLine{227         \textcolor{keywordtype}{int} dy = std::abs(y1-\/y0);}
+\DoxyCodeLine{228         std::vector<Point2i> ray\_points;}
+\DoxyCodeLine{229         \textcolor{keywordtype}{int} ystep = 1;}
+\DoxyCodeLine{230         \textcolor{keywordflow}{if}(y0>=y1) ystep = -\/1;}
+\DoxyCodeLine{231         \textcolor{keywordtype}{int} err = 0;}
+\DoxyCodeLine{232         \textcolor{keywordtype}{int} x = x0, y = y0;}
+\DoxyCodeLine{233         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<=dx; ++i)}
+\DoxyCodeLine{234         \{}
+\DoxyCodeLine{235             ray\_points.push\_back(\mbox{\hyperlink{point__types_8h_ac279483d1fec05461f3a6f954334b129}{Point2i}}(\{x, y\}));}
+\DoxyCodeLine{236             x += 1;}
+\DoxyCodeLine{237             err += dy;}
+\DoxyCodeLine{238             \textcolor{keywordflow}{if}(2*err>=dx)}
+\DoxyCodeLine{239             \{}
+\DoxyCodeLine{240                 y += ystep;}
+\DoxyCodeLine{241                 err -\/= dx;}
+\DoxyCodeLine{242             \}}
+\DoxyCodeLine{243         \}}
+\DoxyCodeLine{244         \textcolor{keywordflow}{if}(steep)}
+\DoxyCodeLine{245         \{}
+\DoxyCodeLine{246             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& point: ray\_points) std::swap(point[0], point[1]);}
+\DoxyCodeLine{247         \}}
+\DoxyCodeLine{248         }
+\DoxyCodeLine{249         \textcolor{keywordflow}{return} ray\_points;}
+\DoxyCodeLine{250     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/planning\+\_\+lib/\mbox{\hyperlink{rrt__planner_8h}{rrt\+\_\+planner.\+h}}\end{DoxyCompactItemize}

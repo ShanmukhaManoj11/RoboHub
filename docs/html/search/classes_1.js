@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point_29',['Point',['../classPoint.html',1,'']]]
+  ['baseglobalplanner2d_90',['BaseGlobalPlanner2d',['../classBaseGlobalPlanner2d.html',1,'']]]
 ];

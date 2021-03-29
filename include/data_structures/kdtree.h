@@ -34,6 +34,9 @@ class KDTree
 public:
 	typedef std::shared_ptr< KDNode<d, T> > KDNodePtr;
 	
+	/**
+	* @brief Constructor
+	*/
 	KDTree(): root(nullptr) {}
 
 	/**
@@ -98,7 +101,7 @@ public:
 	}
 
 	/**
-	* @override 
+	* @overload 
 	* 
 	* retrive the node corresponding to the closest point in the tree to the query point
 	*/
@@ -111,12 +114,12 @@ public:
 	}
 
 	/**
-	* @brief get nodes in the tree that are with in radius units from the query point
+	* @brief get points in the tree that are with in radius units from the query point
 	*
 	* @param point query point
 	* @param radius search radius
 	*
-	* @return returns vector of node pointers that are within radius units from the input query point
+	* @return returns vector of points that are within radius units from the input query point
 	*/
 	std::vector< Point<d, T> > neighborhood(const Point<d, T>& point, const double& radius)
 	{
@@ -126,6 +129,7 @@ public:
 	}
 
 private:
+	/// @biref tree root ptr
 	KDNodePtr root;
 
 	/**

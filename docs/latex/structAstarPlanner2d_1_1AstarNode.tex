@@ -1,0 +1,101 @@
+\hypertarget{structAstarPlanner2d_1_1AstarNode}{}\doxysection{Astar\+Planner2d\+::Astar\+Node Struct Reference}
+\label{structAstarPlanner2d_1_1AstarNode}\index{AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}}
+
+
+A$\ast$ node containing information about parent indices and computed costs.  
+
+
+
+
+{\ttfamily \#include $<$astar\+\_\+planner.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_a1b20e9cb000bb9bba8c131a866a5d949}{Astar\+Node}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{point__types_8h_ac279483d1fec05461f3a6f954334b129}{Point2i}} \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_a12b13d2a87c9d8931c6e7611a587d7ca}{parent}}
+\item 
+float \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_aec86af9e2a00eb6665bd0067ea0a673b}{cost\+\_\+to\+\_\+reach}}
+\item 
+float \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_ad9d373339dd2bcd3ad7b0c8abff5eb49}{heuristic\+\_\+cost}}
+\item 
+float \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_abbc84998a9f9c92787648e89c10a456b}{cost}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A$\ast$ node containing information about parent indices and computed costs. 
+
+Definition at line 19 of file astar\+\_\+planner.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structAstarPlanner2d_1_1AstarNode_a1b20e9cb000bb9bba8c131a866a5d949}\label{structAstarPlanner2d_1_1AstarNode_a1b20e9cb000bb9bba8c131a866a5d949}} 
+\index{AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}!AstarNode@{AstarNode}}
+\index{AstarNode@{AstarNode}!AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}}
+\doxysubsubsection{\texorpdfstring{AstarNode()}{AstarNode()}}
+{\footnotesize\ttfamily Astar\+Planner2d\+::\+Astar\+Node\+::\+Astar\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file astar\+\_\+planner.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                    : \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_a12b13d2a87c9d8931c6e7611a587d7ca}{parent}}(\{-\/1, -\/1\}), \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_aec86af9e2a00eb6665bd0067ea0a673b}{cost\_to\_reach}}(std::numeric\_limits<float>::max()), }
+\DoxyCodeLine{31             \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_ad9d373339dd2bcd3ad7b0c8abff5eb49}{heuristic\_cost}}(std::numeric\_limits<float>::max()), \mbox{\hyperlink{structAstarPlanner2d_1_1AstarNode_abbc84998a9f9c92787648e89c10a456b}{cost}}(std::numeric\_limits<float>::max()) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structAstarPlanner2d_1_1AstarNode_a12b13d2a87c9d8931c6e7611a587d7ca}\label{structAstarPlanner2d_1_1AstarNode_a12b13d2a87c9d8931c6e7611a587d7ca}} 
+\index{AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}!parent@{parent}}
+\index{parent@{parent}!AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{point__types_8h_ac279483d1fec05461f3a6f954334b129}{Point2i}} Astar\+Planner2d\+::\+Astar\+Node\+::parent}
+
+
+
+Definition at line 22 of file astar\+\_\+planner.\+h.
+
+\mbox{\Hypertarget{structAstarPlanner2d_1_1AstarNode_aec86af9e2a00eb6665bd0067ea0a673b}\label{structAstarPlanner2d_1_1AstarNode_aec86af9e2a00eb6665bd0067ea0a673b}} 
+\index{AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}!cost\_to\_reach@{cost\_to\_reach}}
+\index{cost\_to\_reach@{cost\_to\_reach}!AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}}
+\doxysubsubsection{\texorpdfstring{cost\_to\_reach}{cost\_to\_reach}}
+{\footnotesize\ttfamily float Astar\+Planner2d\+::\+Astar\+Node\+::cost\+\_\+to\+\_\+reach}
+
+
+
+Definition at line 24 of file astar\+\_\+planner.\+h.
+
+\mbox{\Hypertarget{structAstarPlanner2d_1_1AstarNode_ad9d373339dd2bcd3ad7b0c8abff5eb49}\label{structAstarPlanner2d_1_1AstarNode_ad9d373339dd2bcd3ad7b0c8abff5eb49}} 
+\index{AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}!heuristic\_cost@{heuristic\_cost}}
+\index{heuristic\_cost@{heuristic\_cost}!AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}}
+\doxysubsubsection{\texorpdfstring{heuristic\_cost}{heuristic\_cost}}
+{\footnotesize\ttfamily float Astar\+Planner2d\+::\+Astar\+Node\+::heuristic\+\_\+cost}
+
+
+
+Definition at line 26 of file astar\+\_\+planner.\+h.
+
+\mbox{\Hypertarget{structAstarPlanner2d_1_1AstarNode_abbc84998a9f9c92787648e89c10a456b}\label{structAstarPlanner2d_1_1AstarNode_abbc84998a9f9c92787648e89c10a456b}} 
+\index{AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}!cost@{cost}}
+\index{cost@{cost}!AstarPlanner2d::AstarNode@{AstarPlanner2d::AstarNode}}
+\doxysubsubsection{\texorpdfstring{cost}{cost}}
+{\footnotesize\ttfamily float Astar\+Planner2d\+::\+Astar\+Node\+::cost}
+
+
+
+Definition at line 28 of file astar\+\_\+planner.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/planning\+\_\+lib/\mbox{\hyperlink{astar__planner_8h}{astar\+\_\+planner.\+h}}\end{DoxyCompactItemize}

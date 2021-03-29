@@ -7,24 +7,39 @@
 #include <algorithm>
 #include <iostream>
 
+/**
+* @brief A* planner for 2d maps.
+*/
 class AstarPlanner2d: public BaseGlobalPlanner2d
 {
 public:
+	/**
+	* @brief A* node containing information about parent indices and computed costs
+	*/
 	struct AstarNode
 	{
+		// parent index
 		Point2i parent;
+		// cost to reach this node from start node
 		float cost_to_reach;
+		// heuristic cost - cost to reach goal, euclidean distance from this node to goal
 		float heuristic_cost;
+		// total cost = cost to reach + heuristic cost
 		float cost;
 
 		AstarNode(): parent({-1, -1}), cost_to_reach(std::numeric_limits<float>::max()), 
 			heuristic_cost(std::numeric_limits<float>::max()), cost(std::numeric_limits<float>::max()) {}
 	};
 
+	/// @brief Default constructor
 	AstarPlanner2d() {}
 
+	/**
+	* @brief computes path using A* search from start to end points
+	*/
 	std::vector<Point2f> compute_plan(Point2f& start, Point2f& goal)
 	{
+		// transfrom points in world coordinates to the discritized map indices
 		int si=0, sj=0, gi=0, gj=0;
 		if(_map.xy_to_ij(start[0], start[1], si, sj) && _map.xy_to_ij(goal[0], goal[1], gi, gj))
 		{
@@ -32,6 +47,7 @@ public:
 			{
 				Point2i start_i({si, sj});
 				Point2i goal_i({gi, gj});
+				// A* search from start to goal
 				std::vector<Point2i> path = astar(start_i, goal_i);
 				std::vector<Point2f> path_f;
 				for(auto path_point: path) 
@@ -46,11 +62,16 @@ public:
 		return std::vector<Point2f>();
 	}
 private:
+	/// @brief typedef to store elements in a priority queue
 	typedef std::pair<Point2i, std::pair<float, float>> PQ_Element;
+
+	/// @brief A* search method
 	std::vector<Point2i> astar(Point2i& start, Point2i& goal)
 	{
 		int width = _map.get_width(), height = _map.get_height();
+		// vector of A* nodes with info about parent indices and computed costs
 		std::vector<AstarNode> nodes(width*height, AstarNode());
+		// comparator for elements in the priority queue
 		auto comp = [](PQ_Element& a, PQ_Element& b){
 			if(a.second.first == b.second.first) return a.second.second > b.second.second;
 			return a.second.first > b.second.first;
@@ -76,6 +97,7 @@ private:
 			}
 
 			int cur_ind = cur.first[0]*width+cur.first[1];
+			// check neighbors if they are valid and not occupied and add to queue if they satisfy the validity conditions
 			for(int i=-1; i<=1; ++i)
 			{
 				for(int j=-1; j<=1; ++j)
@@ -106,6 +128,7 @@ private:
 			}
 		}
 
+		// retrieve path by tracing back parent indices from goal cell
 		std::vector<Point2i> path;
 		if(goal_reached)
 		{

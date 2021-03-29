@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kdnode_37',['KDNode',['../classKDNode.html#a5af3e37cb1bb98e39f077ef57f7a55a0',1,'KDNode::KDNode()'],['../classKDNode.html#ac6e6d8162e9f9c59380aa7b1c6ad2d8d',1,'KDNode::KDNode(Point&lt; d, T &gt; &amp;p)']]],
-  ['kdtree_38',['KDTree',['../classKDTree.html#ae6363981a91d4916125b15e0b0b5c2e8',1,'KDTree']]]
+  ['distance_5fto_121',['distance_to',['../classPoint.html#a6c7c73a9b2a970f8b91e8c2d647b60c3',1,'Point']]],
+  ['dot_122',['dot',['../classPoint.html#a0a454f14e75c71d0f8d4da1e2c3c4ca0',1,'Point']]]
 ];

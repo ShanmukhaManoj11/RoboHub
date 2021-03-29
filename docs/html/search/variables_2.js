@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['right_48',['right',['../classKDNode.html#a636a31929182990c1e0c4eeba1fc570c',1,'KDNode']]],
-  ['root_49',['root',['../classKDTree.html#adf955d75e777700003ca38f9a3b14148',1,'KDTree']]]
+  ['heuristic_5fcost_170',['heuristic_cost',['../structAstarPlanner2d_1_1AstarNode.html#ad9d373339dd2bcd3ad7b0c8abff5eb49',1,'AstarPlanner2d::AstarNode']]]
 ];
