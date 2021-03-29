@@ -24,7 +24,7 @@ $ make
 
 3. All functionaly can be qualitatively and/or quantitatively tested using provided tests found in `tests` directory  
 
-Refer to [docs](./docs/html/index.html) for implementation and API details
+Refer to [docs](./docs/html/index.html) for implementation and API details (__NOTE__: open file in browser - docs/html/index.html)
 
 ### Running tests
 
@@ -37,3 +37,5 @@ $ cd scripts
 ``` bash
 $ ./test_normal_estimation
 ```
+[plane](./media/plane_points.png) [plane_normals](./media/plane_normals.png)
+[hemisphere](./media/hemisphere_points.png) [hemisphere_normals](./media/hemisphere_normals.png)
