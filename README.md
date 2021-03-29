@@ -37,5 +37,5 @@ $ cd scripts
 ``` bash
 $ ./test_normal_estimation
 ```
-[plane](./media/plane_points.png) [plane_normals](./media/plane_normals.png)
-[hemisphere](./media/hemisphere_points.png) [hemisphere_normals](./media/hemisphere_normals.png)
+![plane](./media/plane_points.png) ![plane_normals](./media/plane_normals.png)  
+![hemisphere](./media/hemisphere_points.png) ![hemisphere_normals](./media/hemisphere_normals.png)
