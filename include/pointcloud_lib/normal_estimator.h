@@ -7,8 +7,8 @@
 /**
 * @brief Normal estimator class
 *
-* Given a pointcloud as a vector points, this object can be used to extract normals at every point.  
-* Normal at a point is estimated based on negiborhood points around that point  
+* Given a pointcloud as a vector points, this object can be used to extract local surface normals at every point.  
+* Local normal at a point is estimated based on negiborhood points around that point  
 * Given a vector of points around a point in a small neighborhood (say within 0.1 m around the point), then surface normal 
 * at that point can be estimated from `SVD` of the covariance matrix of the points vector  
 * 
@@ -25,16 +25,28 @@
 template<unsigned int d, class T>
 class NormalEstimator
 {
+	// currently only supports 3 dimensional points with float and double values
 	static_assert(d==3 && (std::is_same<T, float>::value || std::is_same<T, double>::value), "only supports 3 dimensional float and double points");
 public:
+	/// @brief Default constructor
 	NormalEstimator(): _has_normals(false) {}
 
+	/**
+	* @brief set input point cloud to process
+	*
+	* @param pointvec vector of points
+	*/
 	void set_pointcloud(std::vector< Point<d, T> >& pointvec)
 	{
 		_pointvec = pointvec;
 		_has_normals = false;
 	}
 
+	/**
+	* @brief return normals for each point in the set point vector
+	*
+	* @param search_radius radius to get neighborhood points for calculating local surface normal
+	*/
 	std::vector< Point<d, T> > get_normals(const double& search_radius)
 	{
 		if(!_has_normals) compute_normals(search_radius);
@@ -42,19 +54,28 @@ public:
 	}
 
 private:
+	/// @brief point vector to process
 	std::vector< Point<d, T> > _pointvec;
+
+	/// @brief vector local normals for each point in the points vector
 	std::vector< Point<d, T> > _normalvec;
+
 	bool _has_normals;
 
+	/**
+	* @brief method to comput normals based on SVD of local covariance matrix
+	*/
 	void compute_normals(const double& search_radius)
 	{
 		// O(nlogn) -> KDTree retreives neighbors in average O(logn) time
 		if(_has_normals) return;
 
 		_normalvec = std::vector< Point<d, T> >();
+		// build KDTree from points vector
 		auto _tmpvec = _pointvec;
 		KDTree<d, T> _tree;
 		_tree.build(_tmpvec);
+		// for each point retreive points in local neighborhood and compute normals based on SVD of local covariance matrix
 		for(auto p: _pointvec)
 		{
 			auto pneighbors = _tree.neighborhood(p, search_radius);

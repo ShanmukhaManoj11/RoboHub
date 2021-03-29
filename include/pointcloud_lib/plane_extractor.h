@@ -14,13 +14,27 @@
 template<class T>
 class PlaneExtractor
 {
+	// currently only support points with float and double values
 	static_assert(std::is_same<T, float>::value || std::is_same<T, double>::value, "only supports float and double points");
 public:
+	/**
+	* @brief Default constructor
+	*/
 	PlaneExtractor() {}
 
+	/**
+	* @brief method to extract plane from pointcloud represented as vector of points
+	*
+	* @param pointvec vector of points
+	* @param max_iterations maximum iterations for RANSAC
+	* @param dist_thresh distance threshold from plane to say a point is on the plane
+	* @return returns pair of vector of points of form {plane points, other points}
+	*/
 	std::pair< std::vector< Point<3, T> >, std::vector< Point<3, T> > > extract_plane(std::vector< Point<3, T> >& pointvec, int max_iterations, double dist_thresh)
 	{
+		// get plane inlier indices using RANSAC
 		auto inliers = extract_plane_ransac(pointvec, max_iterations, dist_thresh);
+		// differentiate inliers and other points into 2 point vectors
 		std::vector< Point<3, T> > plane_points;
 		std::vector< Point<3, T> > other_points;
 		for(int i=0; i<pointvec.size(); ++i)
@@ -54,7 +68,7 @@ private:
 	}
 
 	/**
-	* @brief extract indices of points that a maximum plane will fit using ransac
+	* @brief extract indices of points that a maximum plane will fit using RANSAC
 	*/
 	std::unordered_set<int> extract_plane_ransac(std::vector< Point<3, T> >& pointvec, int max_iterations, double dist_thresh)
 	{
