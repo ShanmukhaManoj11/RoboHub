@@ -24,7 +24,7 @@ $ make
 
 3. All functionaly can be qualitatively and/or quantitatively tested using provided tests found in `tests` directory  
 
-Refer to [docs](file://docs/html/index.html) for implementation and API details
+Refer to [docs](./docs/html/index.html) for implementation and API details
 
 ### Running tests
 
