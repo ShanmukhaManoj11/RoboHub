@@ -35,8 +35,14 @@ $ cd scripts
 
 1. __Test normal estimation__  
 ``` bash
-$ ./test_normal_estimation
+$ ./test_normal_estimation.sh
 ```
 | ![plane](./media/plane_points.png)           | ![plane_normals](./media/plane_normals.png)           |
 | :------------------------------------------: | :---------------------------------------------------: |
 | ![hemisphere](./media/hemisphere_points.png) | ![hemisphere_normals](./media/hemisphere_normals.png) |
+
+2. __Test plane extraction__
+``` bash
+$ ./test_plane_extraction.sh
+```
+| ![KITTI sample](./media/kitti_sample_data.png) | ![seg out](./media/segmented_output.png) |
