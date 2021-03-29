@@ -35,7 +35,7 @@ private:
 		{
 			Point2f rand_point;
 			if(i%10==9) rand_point = goal;
-			else rand_point = Point2f({start[0]+distrib(gen), start[1]+distrib(gen)});
+			else rand_point = Point2f({distrib(gen), distrib(gen)});
 
 			std::shared_ptr< KDNode<2, float> > closest_point_ptr = tree.search(rand_point, 0);
 			Point2f closest_point = closest_point_ptr->point;
