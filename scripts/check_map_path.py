@@ -32,11 +32,13 @@ def read_path_from_bin(binfile):
 
 if __name__ == '__main__':
     path = read_path_from_bin('../data/map_path.bin')
-    print(path.shape)
+    # print(path.shape)
 
     width, height, raster_map = read_pgm('../data/map.pgm')
     origin = [-33.0, -39.4] # origin of the map
     resolution = 0.02; # resolution of the map
+    start = [11.0, -9.4]
+    goal = [7.0, -5.4]
     path_i = []
     for path_point in path:
         i = int(np.floor((path_point[0]-origin[0])/resolution))
@@ -47,5 +49,7 @@ if __name__ == '__main__':
 
     # show map with path
     plt.imshow(raster_map, cmap='gray')
+    plt.plot([int(np.floor((start[1]-origin[1])/resolution))], [int(np.floor((start[0]-origin[0])/resolution))], 'ro', markersize=1.0)
+    plt.plot([int(np.floor((goal[1]-origin[1])/resolution))], [int(np.floor((goal[0]-origin[0])/resolution))], 'g*', markersize=1.0)
     plt.plot(path_i[:,1], path_i[:,0], 'b-', linewidth=0.1)
     plt.show()

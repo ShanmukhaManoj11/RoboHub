@@ -86,8 +86,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4196ba82dbae645f0033b9beeb94f5fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlaneExtractor.html#a4196ba82dbae645f0033b9beeb94f5fc">PlaneExtractor</a> ()</td></tr>
+<tr class="memdesc:a4196ba82dbae645f0033b9beeb94f5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classPlaneExtractor.html#a4196ba82dbae645f0033b9beeb94f5fc">More...</a><br /></td></tr>
 <tr class="separator:a4196ba82dbae645f0033b9beeb94f5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a247381959b920ee7355d44cb2be274"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; 3, T &gt; &gt;, std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; 3, T &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlaneExtractor.html#a8a247381959b920ee7355d44cb2be274">extract_plane</a> (std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; 3, T &gt; &gt; &amp;pointvec, int max_iterations, double dist_thresh)</td></tr>
+<tr class="memdesc:a8a247381959b920ee7355d44cb2be274"><td class="mdescLeft">&#160;</td><td class="mdescRight">method to extract plane from pointcloud represented as vector of points  <a href="classPlaneExtractor.html#a8a247381959b920ee7355d44cb2be274">More...</a><br /></td></tr>
 <tr class="separator:a8a247381959b920ee7355d44cb2be274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -96,7 +98,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a86a983eb219b502d1d8eacd2ae4673c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">estimate plane passing through 3 points  <a href="classPlaneExtractor.html#a86a983eb219b502d1d8eacd2ae4673c4">More...</a><br /></td></tr>
 <tr class="separator:a86a983eb219b502d1d8eacd2ae4673c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a654b6052676346ca8fd5a3309c458215"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlaneExtractor.html#a654b6052676346ca8fd5a3309c458215">extract_plane_ransac</a> (std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; 3, T &gt; &gt; &amp;pointvec, int max_iterations, double dist_thresh)</td></tr>
-<tr class="memdesc:a654b6052676346ca8fd5a3309c458215"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract indices of points that a maximum plane will fit using ransac  <a href="classPlaneExtractor.html#a654b6052676346ca8fd5a3309c458215">More...</a><br /></td></tr>
+<tr class="memdesc:a654b6052676346ca8fd5a3309c458215"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract indices of points that a maximum plane will fit using RANSAC  <a href="classPlaneExtractor.html#a654b6052676346ca8fd5a3309c458215">More...</a><br /></td></tr>
 <tr class="separator:a654b6052676346ca8fd5a3309c458215"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -133,8 +135,10 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00019">19</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{}</div>
+<p>Default constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00023">23</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -181,18 +185,31 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00021">21</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> inliers = <a class="code" href="classPlaneExtractor.html#a654b6052676346ca8fd5a3309c458215">extract_plane_ransac</a>(pointvec, max_iterations, dist_thresh);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::vector&lt; Point&lt;3, T&gt; &gt; plane_points;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::vector&lt; Point&lt;3, T&gt; &gt; other_points;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;pointvec.size(); ++i)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">if</span>(inliers.find(i)==inliers.end()) other_points.push_back(pointvec[i]);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">else</span> plane_points.push_back(pointvec[i]);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> {plane_points, other_points};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    } </div>
+<p>method to extract plane from pointcloud represented as vector of points </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pointvec</td><td>vector of points </td></tr>
+    <tr><td class="paramname">max_iterations</td><td>maximum iterations for RANSAC </td></tr>
+    <tr><td class="paramname">dist_thresh</td><td>distance threshold from plane to say a point is on the plane </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns pair of vector of points of form {plane points, other points} </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00033">33</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// get plane inlier indices using RANSAC</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">auto</span> inliers = <a class="code" href="classPlaneExtractor.html#a654b6052676346ca8fd5a3309c458215">extract_plane_ransac</a>(pointvec, max_iterations, dist_thresh);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// differentiate inliers and other points into 2 point vectors</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::vector&lt; Point&lt;3, T&gt; &gt; plane_points;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::vector&lt; Point&lt;3, T&gt; &gt; other_points;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;pointvec.size(); ++i)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span>(inliers.find(i)==inliers.end()) other_points.push_back(pointvec[i]);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">else</span> plane_points.push_back(pointvec[i]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> {plane_points, other_points};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    } </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,20 +244,20 @@ template&lt;class T &gt; </div>
  <code>d = -(a*x0[0] + b*x0[1] + c*x0[2])</code> <br  />
  (a, b, c) represents the plane normal and can be calcualted as cross-product of vectors <code>x1x0</code> and <code>x2x0</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00041">41</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// vector x1x0 = x1-x0</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classPoint.html">Point&lt;3, T&gt;</a> v1 = points[1]-points[0];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// vector x2x0 = x2-x0</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classPoint.html">Point&lt;3, T&gt;</a> v2 = points[2]-points[0];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classPoint.html">Point&lt;4, T&gt;</a> coefs;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        coefs[0] = (v1[1]*v2[2])-(v2[1]*v1[2]);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        coefs[1] = (v2[0]*v1[2])-(v1[0]*v2[2]);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        coefs[2] = (v1[0]*v2[1])-(v2[0]*v1[1]);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        coefs[3] = -(coefs[0]*points[0][0] + coefs[1]*points[0][1] + coefs[2]*points[0][2]);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> coefs;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00055">55</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// vector x1x0 = x1-x0</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classPoint.html">Point&lt;3, T&gt;</a> v1 = points[1]-points[0];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// vector x2x0 = x2-x0</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classPoint.html">Point&lt;3, T&gt;</a> v2 = points[2]-points[0];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classPoint.html">Point&lt;4, T&gt;</a> coefs;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        coefs[0] = (v1[1]*v2[2])-(v2[1]*v1[2]);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        coefs[1] = (v2[0]*v1[2])-(v1[0]*v2[2]);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        coefs[2] = (v1[0]*v2[1])-(v2[0]*v1[1]);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        coefs[3] = -(coefs[0]*points[0][0] + coefs[1]*points[0][1] + coefs[2]*points[0][2]);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> coefs;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -286,36 +303,36 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>extract indices of points that a maximum plane will fit using ransac </p>
+<p>extract indices of points that a maximum plane will fit using RANSAC </p>
 
-<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00059">59</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::unordered_set&lt;int&gt; inliers;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        srand(time(NULL));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">int</span> n = pointvec.size();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;max_iterations; ++i)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            std::unordered_set&lt;int&gt; inliers_this_iteration;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">int</span> i0 = rand()%n;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordtype">int</span> i1 = rand()%n;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">while</span>(i0==i1) i1 = rand()%n;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordtype">int</span> i2 = rand()%n;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">while</span>(i0==i2 || i1==i2) i2 = rand()%n;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">auto</span> coefs = <a class="code" href="classPlaneExtractor.html#a86a983eb219b502d1d8eacd2ae4673c4">estimate_plane_through</a>({pointvec[i0], pointvec[i1], pointvec[i2]});</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; ++j)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span>(i0==j || i1==j || i2==j) inliers_this_iteration.insert(j);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="keywordtype">double</span> dist = std::abs(coefs[0]*pointvec[j][0] + coefs[1]*pointvec[j][1] + coefs[2]*pointvec[j][2] + coefs[3])/std::sqrt(coefs[0]*coefs[0] + coefs[1]*coefs[1] + coefs[2]*coefs[2]);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keywordflow">if</span>(dist &lt;= dist_thresh) inliers_this_iteration.insert(j);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">if</span>(inliers.size() &lt; inliers_this_iteration.size()) inliers = inliers_this_iteration;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> inliers;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="plane__extractor_8h_source.html#l00073">73</a> of file <a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::unordered_set&lt;int&gt; inliers;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        srand(time(NULL));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">int</span> n = pointvec.size();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;max_iterations; ++i)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            std::unordered_set&lt;int&gt; inliers_this_iteration;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">int</span> i0 = rand()%n;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">int</span> i1 = rand()%n;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">while</span>(i0==i1) i1 = rand()%n;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">int</span> i2 = rand()%n;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">while</span>(i0==i2 || i1==i2) i2 = rand()%n;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">auto</span> coefs = <a class="code" href="classPlaneExtractor.html#a86a983eb219b502d1d8eacd2ae4673c4">estimate_plane_through</a>({pointvec[i0], pointvec[i1], pointvec[i2]});</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; ++j)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span>(i0==j || i1==j || i2==j) inliers_this_iteration.insert(j);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    <span class="keywordtype">double</span> dist = std::abs(coefs[0]*pointvec[j][0] + coefs[1]*pointvec[j][1] + coefs[2]*pointvec[j][2] + coefs[3])/std::sqrt(coefs[0]*coefs[0] + coefs[1]*coefs[1] + coefs[2]*coefs[2]);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <span class="keywordflow">if</span>(dist &lt;= dist_thresh) inliers_this_iteration.insert(j);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span>(inliers.size() &lt; inliers_this_iteration.size()) inliers = inliers_this_iteration;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> inliers;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,9 +340,9 @@ template&lt;class T &gt; </div>
 <li>include/pointcloud_lib/<a class="el" href="plane__extractor_8h_source.html">plane_extractor.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassPlaneExtractor_html_a86a983eb219b502d1d8eacd2ae4673c4"><div class="ttname"><a href="classPlaneExtractor.html#a86a983eb219b502d1d8eacd2ae4673c4">PlaneExtractor::estimate_plane_through</a></div><div class="ttdeci">Point&lt; 4, T &gt; estimate_plane_through(std::vector&lt; Point&lt; 3, T &gt; &gt; &amp;&amp;points)</div><div class="ttdoc">estimate plane passing through 3 points</div><div class="ttdef"><b>Definition:</b> <a href="plane__extractor_8h_source.html#l00041">plane_extractor.h:41</a></div></div>
+<div class="ttc" id="aclassPlaneExtractor_html_a86a983eb219b502d1d8eacd2ae4673c4"><div class="ttname"><a href="classPlaneExtractor.html#a86a983eb219b502d1d8eacd2ae4673c4">PlaneExtractor::estimate_plane_through</a></div><div class="ttdeci">Point&lt; 4, T &gt; estimate_plane_through(std::vector&lt; Point&lt; 3, T &gt; &gt; &amp;&amp;points)</div><div class="ttdoc">estimate plane passing through 3 points</div><div class="ttdef"><b>Definition:</b> <a href="plane__extractor_8h_source.html#l00055">plane_extractor.h:55</a></div></div>
 <div class="ttc" id="aclassPoint_html"><div class="ttname"><a href="classPoint.html">Point</a></div><div class="ttdoc">Point template class.</div><div class="ttdef"><b>Definition:</b> <a href="point__types_8h_source.html#l00014">point_types.h:14</a></div></div>
-<div class="ttc" id="aclassPlaneExtractor_html_a654b6052676346ca8fd5a3309c458215"><div class="ttname"><a href="classPlaneExtractor.html#a654b6052676346ca8fd5a3309c458215">PlaneExtractor::extract_plane_ransac</a></div><div class="ttdeci">std::unordered_set&lt; int &gt; extract_plane_ransac(std::vector&lt; Point&lt; 3, T &gt; &gt; &amp;pointvec, int max_iterations, double dist_thresh)</div><div class="ttdoc">extract indices of points that a maximum plane will fit using ransac</div><div class="ttdef"><b>Definition:</b> <a href="plane__extractor_8h_source.html#l00059">plane_extractor.h:59</a></div></div>
+<div class="ttc" id="aclassPlaneExtractor_html_a654b6052676346ca8fd5a3309c458215"><div class="ttname"><a href="classPlaneExtractor.html#a654b6052676346ca8fd5a3309c458215">PlaneExtractor::extract_plane_ransac</a></div><div class="ttdeci">std::unordered_set&lt; int &gt; extract_plane_ransac(std::vector&lt; Point&lt; 3, T &gt; &gt; &amp;pointvec, int max_iterations, double dist_thresh)</div><div class="ttdoc">extract indices of points that a maximum plane will fit using RANSAC</div><div class="ttdef"><b>Definition:</b> <a href="plane__extractor_8h_source.html#l00073">plane_extractor.h:73</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

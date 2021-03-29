@@ -22,4 +22,6 @@ $ make
 
 2. API is header only. Implementations can be found in `include` directory
 
-3. All functionaly can be qualitatively and/or quantitatively tested using provided tests found in `tests` directory
+3. All functionaly can be qualitatively and/or quantitatively tested using provided tests found in `tests` directory  
+
+### Running tests

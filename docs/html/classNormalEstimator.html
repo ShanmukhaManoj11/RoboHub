@@ -87,22 +87,28 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afd0d2ea3287d798904881cd7a46f9cf6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalEstimator.html#afd0d2ea3287d798904881cd7a46f9cf6">NormalEstimator</a> ()</td></tr>
+<tr class="memdesc:afd0d2ea3287d798904881cd7a46f9cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classNormalEstimator.html#afd0d2ea3287d798904881cd7a46f9cf6">More...</a><br /></td></tr>
 <tr class="separator:afd0d2ea3287d798904881cd7a46f9cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17645e47d30461dc2df38a89c6c2c408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalEstimator.html#a17645e47d30461dc2df38a89c6c2c408">set_pointcloud</a> (std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; d, T &gt; &gt; &amp;pointvec)</td></tr>
+<tr class="memdesc:a17645e47d30461dc2df38a89c6c2c408"><td class="mdescLeft">&#160;</td><td class="mdescRight">set input point cloud to process  <a href="classNormalEstimator.html#a17645e47d30461dc2df38a89c6c2c408">More...</a><br /></td></tr>
 <tr class="separator:a17645e47d30461dc2df38a89c6c2c408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6290107cca78bb0b6c6014947164d07"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; d, T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalEstimator.html#ae6290107cca78bb0b6c6014947164d07">get_normals</a> (const double &amp;search_radius)</td></tr>
+<tr class="memdesc:ae6290107cca78bb0b6c6014947164d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">return normals for each point in the set point vector  <a href="classNormalEstimator.html#ae6290107cca78bb0b6c6014947164d07">More...</a><br /></td></tr>
 <tr class="separator:ae6290107cca78bb0b6c6014947164d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a31a191f86f1a4c57145d03c74490e26a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalEstimator.html#a31a191f86f1a4c57145d03c74490e26a">compute_normals</a> (const double &amp;search_radius)</td></tr>
+<tr class="memdesc:a31a191f86f1a4c57145d03c74490e26a"><td class="mdescLeft">&#160;</td><td class="mdescRight">method to comput normals based on SVD of local covariance matrix  <a href="classNormalEstimator.html#a31a191f86f1a4c57145d03c74490e26a">More...</a><br /></td></tr>
 <tr class="separator:a31a191f86f1a4c57145d03c74490e26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a62419c0169f1a811f5c1b3f0004cfb9d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; d, T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">_pointvec</a></td></tr>
+<tr class="memdesc:a62419c0169f1a811f5c1b3f0004cfb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">point vector to process  <a href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">More...</a><br /></td></tr>
 <tr class="separator:a62419c0169f1a811f5c1b3f0004cfb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf224a18ad5cddb2d3fa12b76c3965cf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; d, T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a></td></tr>
+<tr class="memdesc:acf224a18ad5cddb2d3fa12b76c3965cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector local normals for each point in the points vector  <a href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">More...</a><br /></td></tr>
 <tr class="separator:acf224a18ad5cddb2d3fa12b76c3965cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cef39f2d1ce282c942837a2f47532f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a></td></tr>
 <tr class="separator:a0cef39f2d1ce282c942837a2f47532f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,8 +118,8 @@ Private Attributes</h2></td></tr>
 class NormalEstimator&lt; d, T &gt;</h3>
 
 <p>Normal estimator class. </p>
-<p>Given a pointcloud as a vector points, this object can be used to extract normals at every point. <br  />
- Normal at a point is estimated based on negiborhood points around that point <br  />
+<p>Given a pointcloud as a vector points, this object can be used to extract local surface normals at every point. <br  />
+ Local normal at a point is estimated based on negiborhood points around that point <br  />
  Given a vector of points around a point in a small neighborhood (say within 0.1 m around the point), then surface normal at that point can be estimated from <code>SVD</code> of the covariance matrix of the points vector <br  />
 </p>
 <p>For a set of n 3d points in the neighborhood of 0.1 m, then define marix <code>A</code> \(\ni\) <br  />
@@ -151,8 +157,10 @@ template&lt;unsigned int d, class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00030">30</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;: <a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a>(<span class="keyword">false</span>) {}</div>
+<p>Default constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00032">32</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;: <a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a>(<span class="keyword">false</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -183,11 +191,19 @@ template&lt;unsigned int d, class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00032">32</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">_pointvec</a> = pointvec;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<p>set input point cloud to process </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pointvec</td><td>vector of points </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00039">39</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">_pointvec</a> = pointvec;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,11 +233,19 @@ template&lt;unsigned int d, class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00038">38</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a>) <a class="code" href="classNormalEstimator.html#a31a191f86f1a4c57145d03c74490e26a">compute_normals</a>(search_radius);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<p>return normals for each point in the set point vector </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">search_radius</td><td>radius to get neighborhood points for calculating local surface normal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00050">50</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a>) <a class="code" href="classNormalEstimator.html#a31a191f86f1a4c57145d03c74490e26a">compute_normals</a>(search_radius);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -251,40 +275,44 @@ template&lt;unsigned int d, class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00049">49</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// O(nlogn) -&gt; KDTree retreives neighbors in average O(logn) time</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a> = std::vector&lt; Point&lt;d, T&gt; &gt;();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">auto</span> _tmpvec = <a class="code" href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">_pointvec</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classKDTree.html">KDTree&lt;d, T&gt;</a> _tree;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        _tree.<a class="code" href="classKDTree.html#a0d95cf2b51557fb9c78bd999472349f8">build</a>(_tmpvec);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> p: <a class="code" href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">_pointvec</a>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">auto</span> pneighbors = _tree.<a class="code" href="classKDTree.html#aa257aa6c71592c605df5d0bc0db25dec">neighborhood</a>(p, search_radius);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span>(pneighbors.size()&gt;=3)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">// compute covariance matrix</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                Eigen::Matrix&lt;T, d, d&gt; cov = <a class="code" href="point__utils_8h.html#a91b30cc107690ff98957cd5c9e54e836">compute_covariance_matrix</a>(pneighbors);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="comment">// SVD decomposition of cov into U*D*VT</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// normal vector is the column in V corresponding to least singular value of covariance matrix</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                Eigen::JacobiSVD&lt; Eigen::Matrix&lt;T, d, d&gt; &gt; svd(cov, Eigen::DecompositionOptions::ComputeFullU | Eigen::DecompositionOptions::ComputeFullV);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                Eigen::Matrix&lt;T, d, d&gt; V = svd.matrixV();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="classPoint.html">Point&lt;d, T&gt;</a> normal;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;d; ++i) normal[i] = V(i, d-1);</div>
+<p>method to comput normals based on SVD of local covariance matrix </p>
+
+<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00068">68</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// O(nlogn) -&gt; KDTree retreives neighbors in average O(logn) time</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a>) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">// check for consistency in the direction</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">// assume normals point towards origin</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                normal = (normal.<a class="code" href="classPoint.html#a0a454f14e75c71d0f8d4da1e2c3c4ca0">dot</a>(-p)&gt;0)?normal:-normal;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a>.push_back(normal);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">else</span> <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a>.push_back(<a class="code" href="classPoint.html">Point&lt;d, T&gt;</a>());</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a> = std::vector&lt; Point&lt;d, T&gt; &gt;();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// build KDTree from points vector</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">auto</span> _tmpvec = <a class="code" href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">_pointvec</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classKDTree.html">KDTree&lt;d, T&gt;</a> _tree;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        _tree.<a class="code" href="classKDTree.html#a0d95cf2b51557fb9c78bd999472349f8">build</a>(_tmpvec);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// for each point retreive points in local neighborhood and compute normals based on SVD of local covariance matrix</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> p: <a class="code" href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">_pointvec</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keyword">auto</span> pneighbors = _tree.<a class="code" href="classKDTree.html#aa257aa6c71592c605df5d0bc0db25dec">neighborhood</a>(p, search_radius);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span>(pneighbors.size()&gt;=3)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">// compute covariance matrix</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                Eigen::Matrix&lt;T, d, d&gt; cov = <a class="code" href="point__utils_8h.html#a91b30cc107690ff98957cd5c9e54e836">compute_covariance_matrix</a>(pneighbors);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">// SVD decomposition of cov into U*D*VT</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="comment">// normal vector is the column in V corresponding to least singular value of covariance matrix</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                Eigen::JacobiSVD&lt; Eigen::Matrix&lt;T, d, d&gt; &gt; svd(cov, Eigen::DecompositionOptions::ComputeFullU | Eigen::DecompositionOptions::ComputeFullV);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                Eigen::Matrix&lt;T, d, d&gt; V = svd.matrixV();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="classPoint.html">Point&lt;d, T&gt;</a> normal;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;d; ++i) normal[i] = V(i, d-1);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">// check for consistency in the direction</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="comment">// assume normals point towards origin</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                normal = (normal.<a class="code" href="classPoint.html#a0a454f14e75c71d0f8d4da1e2c3c4ca0">dot</a>(-p)&gt;0)?normal:-normal;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a>.push_back(normal);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">else</span> <a class="code" href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">_normalvec</a>.push_back(<a class="code" href="classPoint.html">Point&lt;d, T&gt;</a>());</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">_has_normals</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,7 +339,9 @@ template&lt;unsigned int d, class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00045">45</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
+<p>point vector to process </p>
+
+<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00058">58</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +367,9 @@ template&lt;unsigned int d, class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00046">46</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
+<p>vector local normals for each point in the points vector </p>
+
+<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00061">61</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
 
 </div>
 </div>
@@ -363,7 +395,7 @@ template&lt;unsigned int d, class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00047">47</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="normal__estimator_8h_source.html#l00063">63</a> of file <a class="el" href="normal__estimator_8h_source.html">normal_estimator.h</a>.</p>
 
 </div>
 </div>
@@ -374,12 +406,12 @@ template&lt;unsigned int d, class T &gt; </div>
 <div class="ttc" id="aclassKDTree_html_a0d95cf2b51557fb9c78bd999472349f8"><div class="ttname"><a href="classKDTree.html#a0d95cf2b51557fb9c78bd999472349f8">KDTree::build</a></div><div class="ttdeci">void build(std::vector&lt; Point&lt; d, T &gt; &gt; &amp;pointvec)</div><div class="ttdoc">build tree from a vector of points</div><div class="ttdef"><b>Definition:</b> <a href="kdtree_8h_source.html#l00047">kdtree.h:47</a></div></div>
 <div class="ttc" id="aclassKDTree_html"><div class="ttname"><a href="classKDTree.html">KDTree</a></div><div class="ttdoc">KDTree template class.</div><div class="ttdef"><b>Definition:</b> <a href="kdtree_8h_source.html#l00032">kdtree.h:32</a></div></div>
 <div class="ttc" id="apoint__utils_8h_html_a91b30cc107690ff98957cd5c9e54e836"><div class="ttname"><a href="point__utils_8h.html#a91b30cc107690ff98957cd5c9e54e836">compute_covariance_matrix</a></div><div class="ttdeci">Eigen::Matrix&lt; T, d, d &gt; compute_covariance_matrix(std::vector&lt; Point&lt; d, T &gt; &gt; &amp;pointvec)</div><div class="ttdoc">compute covariance matrix given a vector points</div><div class="ttdef"><b>Definition:</b> <a href="point__utils_8h_source.html#l00023">point_utils.h:23</a></div></div>
-<div class="ttc" id="aclassNormalEstimator_html_a31a191f86f1a4c57145d03c74490e26a"><div class="ttname"><a href="classNormalEstimator.html#a31a191f86f1a4c57145d03c74490e26a">NormalEstimator::compute_normals</a></div><div class="ttdeci">void compute_normals(const double &amp;search_radius)</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00049">normal_estimator.h:49</a></div></div>
+<div class="ttc" id="aclassNormalEstimator_html_a31a191f86f1a4c57145d03c74490e26a"><div class="ttname"><a href="classNormalEstimator.html#a31a191f86f1a4c57145d03c74490e26a">NormalEstimator::compute_normals</a></div><div class="ttdeci">void compute_normals(const double &amp;search_radius)</div><div class="ttdoc">method to comput normals based on SVD of local covariance matrix</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00068">normal_estimator.h:68</a></div></div>
 <div class="ttc" id="aclassKDTree_html_aa257aa6c71592c605df5d0bc0db25dec"><div class="ttname"><a href="classKDTree.html#aa257aa6c71592c605df5d0bc0db25dec">KDTree::neighborhood</a></div><div class="ttdeci">std::vector&lt; Point&lt; d, T &gt; &gt; neighborhood(const Point&lt; d, T &gt; &amp;point, const double &amp;radius)</div><div class="ttdoc">get points in the tree that are with in radius units from the query point</div><div class="ttdef"><b>Definition:</b> <a href="kdtree_8h_source.html#l00124">kdtree.h:124</a></div></div>
-<div class="ttc" id="aclassNormalEstimator_html_a0cef39f2d1ce282c942837a2f47532f8"><div class="ttname"><a href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">NormalEstimator::_has_normals</a></div><div class="ttdeci">bool _has_normals</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00047">normal_estimator.h:47</a></div></div>
-<div class="ttc" id="aclassNormalEstimator_html_a62419c0169f1a811f5c1b3f0004cfb9d"><div class="ttname"><a href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">NormalEstimator::_pointvec</a></div><div class="ttdeci">std::vector&lt; Point&lt; d, T &gt; &gt; _pointvec</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00045">normal_estimator.h:45</a></div></div>
+<div class="ttc" id="aclassNormalEstimator_html_a0cef39f2d1ce282c942837a2f47532f8"><div class="ttname"><a href="classNormalEstimator.html#a0cef39f2d1ce282c942837a2f47532f8">NormalEstimator::_has_normals</a></div><div class="ttdeci">bool _has_normals</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00063">normal_estimator.h:63</a></div></div>
+<div class="ttc" id="aclassNormalEstimator_html_a62419c0169f1a811f5c1b3f0004cfb9d"><div class="ttname"><a href="classNormalEstimator.html#a62419c0169f1a811f5c1b3f0004cfb9d">NormalEstimator::_pointvec</a></div><div class="ttdeci">std::vector&lt; Point&lt; d, T &gt; &gt; _pointvec</div><div class="ttdoc">point vector to process</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00058">normal_estimator.h:58</a></div></div>
 <div class="ttc" id="aclassPoint_html_a0a454f14e75c71d0f8d4da1e2c3c4ca0"><div class="ttname"><a href="classPoint.html#a0a454f14e75c71d0f8d4da1e2c3c4ca0">Point::dot</a></div><div class="ttdeci">T dot(const Point &amp;point)</div><div class="ttdoc">compute dot product of two points</div><div class="ttdef"><b>Definition:</b> <a href="point__types_8h_source.html#l00145">point_types.h:145</a></div></div>
-<div class="ttc" id="aclassNormalEstimator_html_acf224a18ad5cddb2d3fa12b76c3965cf"><div class="ttname"><a href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">NormalEstimator::_normalvec</a></div><div class="ttdeci">std::vector&lt; Point&lt; d, T &gt; &gt; _normalvec</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00046">normal_estimator.h:46</a></div></div>
+<div class="ttc" id="aclassNormalEstimator_html_acf224a18ad5cddb2d3fa12b76c3965cf"><div class="ttname"><a href="classNormalEstimator.html#acf224a18ad5cddb2d3fa12b76c3965cf">NormalEstimator::_normalvec</a></div><div class="ttdeci">std::vector&lt; Point&lt; d, T &gt; &gt; _normalvec</div><div class="ttdoc">vector local normals for each point in the points vector</div><div class="ttdef"><b>Definition:</b> <a href="normal__estimator_8h_source.html#l00061">normal_estimator.h:61</a></div></div>
 <div class="ttc" id="aclassPoint_html"><div class="ttname"><a href="classPoint.html">Point</a></div><div class="ttdoc">Point template class.</div><div class="ttdef"><b>Definition:</b> <a href="point__types_8h_source.html#l00014">point_types.h:14</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -13,23 +13,23 @@ Normal estimator class.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classNormalEstimator_afd0d2ea3287d798904881cd7a46f9cf6}{Normal\+Estimator}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classNormalEstimator_a17645e47d30461dc2df38a89c6c2c408}{set\+\_\+pointcloud}} (std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \&pointvec)
-\item 
+\begin{DoxyCompactList}\small\item\em set input point cloud to process \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \mbox{\hyperlink{classNormalEstimator_ae6290107cca78bb0b6c6014947164d07}{get\+\_\+normals}} (const double \&search\+\_\+radius)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em return normals for each point in the set point vector \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classNormalEstimator_a31a191f86f1a4c57145d03c74490e26a}{compute\+\_\+normals}} (const double \&search\+\_\+radius)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em method to comput normals based on S\+VD of local covariance matrix \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \mbox{\hyperlink{classNormalEstimator_a62419c0169f1a811f5c1b3f0004cfb9d}{\+\_\+pointvec}}
-\item 
+\begin{DoxyCompactList}\small\item\em point vector to process \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ d, T $>$ $>$ \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\+\_\+normalvec}}
-\item 
+\begin{DoxyCompactList}\small\item\em vector local normals for each point in the points vector \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\+\_\+has\+\_\+normals}}
 \end{DoxyCompactItemize}
 
@@ -40,8 +40,8 @@ class Normal\+Estimator$<$ d, T $>$}
 
 Normal estimator class. 
 
-Given a pointcloud as a vector points, this object can be used to extract normals at every point. ~\newline
- Normal at a point is estimated based on negiborhood points around that point ~\newline
+Given a pointcloud as a vector points, this object can be used to extract local surface normals at every point. ~\newline
+ Local normal at a point is estimated based on negiborhood points around that point ~\newline
  Given a vector of points around a point in a small neighborhood (say within 0.\+1 m around the point), then surface normal at that point can be estimated from {\ttfamily S\+VD} of the covariance matrix of the points vector ~\newline
 
 
@@ -64,11 +64,15 @@ Definition at line 26 of file normal\+\_\+estimator.\+h.
 
 
 
-Definition at line 30 of file normal\+\_\+estimator.\+h.
+Default constructor. 
+
+
+
+Definition at line 32 of file normal\+\_\+estimator.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{30 : \mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}}(\textcolor{keyword}{false}) \{\}}
+\DoxyCodeLine{32 : \mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}}(\textcolor{keyword}{false}) \{\}}
 
 \end{DoxyCode}
 
@@ -83,14 +87,23 @@ void \mbox{\hyperlink{classNormalEstimator}{Normal\+Estimator}}$<$ d, T $>$\+::s
 
 
 
-Definition at line 32 of file normal\+\_\+estimator.\+h.
+set input point cloud to process 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointvec} & vector of points \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file normal\+\_\+estimator.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{33     \{}
-\DoxyCodeLine{34         \mbox{\hyperlink{classNormalEstimator_a62419c0169f1a811f5c1b3f0004cfb9d}{\_pointvec}} = pointvec;}
-\DoxyCodeLine{35         \mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{36     \}}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \mbox{\hyperlink{classNormalEstimator_a62419c0169f1a811f5c1b3f0004cfb9d}{\_pointvec}} = pointvec;}
+\DoxyCodeLine{42         \mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{43     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classNormalEstimator_ae6290107cca78bb0b6c6014947164d07}\label{classNormalEstimator_ae6290107cca78bb0b6c6014947164d07}} 
@@ -102,14 +115,23 @@ std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$d, T$>$ $>$ \mbox{\hyper
 
 
 
-Definition at line 38 of file normal\+\_\+estimator.\+h.
+return normals for each point in the set point vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+\_\+radius} & radius to get neighborhood points for calculating local surface normal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file normal\+\_\+estimator.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{39     \{}
-\DoxyCodeLine{40         \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}}) \mbox{\hyperlink{classNormalEstimator_a31a191f86f1a4c57145d03c74490e26a}{compute\_normals}}(search\_radius);}
-\DoxyCodeLine{41         \textcolor{keywordflow}{return} \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}};}
-\DoxyCodeLine{42     \}}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}}) \mbox{\hyperlink{classNormalEstimator_a31a191f86f1a4c57145d03c74490e26a}{compute\_normals}}(search\_radius);}
+\DoxyCodeLine{53         \textcolor{keywordflow}{return} \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}};}
+\DoxyCodeLine{54     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classNormalEstimator_a31a191f86f1a4c57145d03c74490e26a}\label{classNormalEstimator_a31a191f86f1a4c57145d03c74490e26a}} 
@@ -121,43 +143,49 @@ void \mbox{\hyperlink{classNormalEstimator}{Normal\+Estimator}}$<$ d, T $>$\+::c
 
 
 
-Definition at line 49 of file normal\+\_\+estimator.\+h.
+method to comput normals based on S\+VD of local covariance matrix 
+
+
+
+Definition at line 68 of file normal\+\_\+estimator.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{50     \{}
-\DoxyCodeLine{51         \textcolor{comment}{// O(nlogn) -\/> KDTree retreives neighbors in average O(logn) time}}
-\DoxyCodeLine{52         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}}) \textcolor{keywordflow}{return};}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54         \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}} = std::vector< Point<d, T> >();}
-\DoxyCodeLine{55         \textcolor{keyword}{auto} \_tmpvec = \mbox{\hyperlink{classNormalEstimator_a62419c0169f1a811f5c1b3f0004cfb9d}{\_pointvec}};}
-\DoxyCodeLine{56         \mbox{\hyperlink{classKDTree}{KDTree<d, T>}} \_tree;}
-\DoxyCodeLine{57         \_tree.\mbox{\hyperlink{classKDTree_a0d95cf2b51557fb9c78bd999472349f8}{build}}(\_tmpvec);}
-\DoxyCodeLine{58         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} p: \mbox{\hyperlink{classNormalEstimator_a62419c0169f1a811f5c1b3f0004cfb9d}{\_pointvec}})}
-\DoxyCodeLine{59         \{}
-\DoxyCodeLine{60             \textcolor{keyword}{auto} pneighbors = \_tree.\mbox{\hyperlink{classKDTree_aa257aa6c71592c605df5d0bc0db25dec}{neighborhood}}(p, search\_radius);}
-\DoxyCodeLine{61             \textcolor{keywordflow}{if}(pneighbors.size()>=3)}
-\DoxyCodeLine{62             \{}
-\DoxyCodeLine{63                 \textcolor{comment}{// compute covariance matrix}}
-\DoxyCodeLine{64                 Eigen::Matrix<T, d, d> cov = \mbox{\hyperlink{point__utils_8h_a91b30cc107690ff98957cd5c9e54e836}{compute\_covariance\_matrix}}(pneighbors);}
-\DoxyCodeLine{65                 }
-\DoxyCodeLine{66                 \textcolor{comment}{// SVD decomposition of cov into U*D*VT}}
-\DoxyCodeLine{67                 \textcolor{comment}{// normal vector is the column in V corresponding to least singular value of covariance matrix}}
-\DoxyCodeLine{68                 Eigen::JacobiSVD< Eigen::Matrix<T, d, d> > svd(cov, Eigen::DecompositionOptions::ComputeFullU | Eigen::DecompositionOptions::ComputeFullV);}
-\DoxyCodeLine{69                 Eigen::Matrix<T, d, d> V = svd.matrixV();}
-\DoxyCodeLine{70                 \mbox{\hyperlink{classPoint}{Point<d, T>}} normal;}
-\DoxyCodeLine{71                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) normal[i] = V(i, d-\/1);}
+\DoxyCodeLine{69     \{}
+\DoxyCodeLine{70         \textcolor{comment}{// O(nlogn) -\/> KDTree retreives neighbors in average O(logn) time}}
+\DoxyCodeLine{71         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}}) \textcolor{keywordflow}{return};}
 \DoxyCodeLine{72 }
-\DoxyCodeLine{73                 \textcolor{comment}{// check for consistency in the direction}}
-\DoxyCodeLine{74                 \textcolor{comment}{// assume normals point towards origin}}
-\DoxyCodeLine{75                 normal = (normal.\mbox{\hyperlink{classPoint_a0a454f14e75c71d0f8d4da1e2c3c4ca0}{dot}}(-\/p)>0)?normal:-\/normal;}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77                 \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}}.push\_back(normal);}
-\DoxyCodeLine{78             \}}
-\DoxyCodeLine{79             \textcolor{keywordflow}{else} \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}}.push\_back(\mbox{\hyperlink{classPoint}{Point<d, T>}}());}
-\DoxyCodeLine{80         \}}
-\DoxyCodeLine{81         \mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{82     \}}
+\DoxyCodeLine{73         \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}} = std::vector< Point<d, T> >();}
+\DoxyCodeLine{74         \textcolor{comment}{// build KDTree from points vector}}
+\DoxyCodeLine{75         \textcolor{keyword}{auto} \_tmpvec = \mbox{\hyperlink{classNormalEstimator_a62419c0169f1a811f5c1b3f0004cfb9d}{\_pointvec}};}
+\DoxyCodeLine{76         \mbox{\hyperlink{classKDTree}{KDTree<d, T>}} \_tree;}
+\DoxyCodeLine{77         \_tree.\mbox{\hyperlink{classKDTree_a0d95cf2b51557fb9c78bd999472349f8}{build}}(\_tmpvec);}
+\DoxyCodeLine{78         \textcolor{comment}{// for each point retreive points in local neighborhood and compute normals based on SVD of local covariance matrix}}
+\DoxyCodeLine{79         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} p: \mbox{\hyperlink{classNormalEstimator_a62419c0169f1a811f5c1b3f0004cfb9d}{\_pointvec}})}
+\DoxyCodeLine{80         \{}
+\DoxyCodeLine{81             \textcolor{keyword}{auto} pneighbors = \_tree.\mbox{\hyperlink{classKDTree_aa257aa6c71592c605df5d0bc0db25dec}{neighborhood}}(p, search\_radius);}
+\DoxyCodeLine{82             \textcolor{keywordflow}{if}(pneighbors.size()>=3)}
+\DoxyCodeLine{83             \{}
+\DoxyCodeLine{84                 \textcolor{comment}{// compute covariance matrix}}
+\DoxyCodeLine{85                 Eigen::Matrix<T, d, d> cov = \mbox{\hyperlink{point__utils_8h_a91b30cc107690ff98957cd5c9e54e836}{compute\_covariance\_matrix}}(pneighbors);}
+\DoxyCodeLine{86                 }
+\DoxyCodeLine{87                 \textcolor{comment}{// SVD decomposition of cov into U*D*VT}}
+\DoxyCodeLine{88                 \textcolor{comment}{// normal vector is the column in V corresponding to least singular value of covariance matrix}}
+\DoxyCodeLine{89                 Eigen::JacobiSVD< Eigen::Matrix<T, d, d> > svd(cov, Eigen::DecompositionOptions::ComputeFullU | Eigen::DecompositionOptions::ComputeFullV);}
+\DoxyCodeLine{90                 Eigen::Matrix<T, d, d> V = svd.matrixV();}
+\DoxyCodeLine{91                 \mbox{\hyperlink{classPoint}{Point<d, T>}} normal;}
+\DoxyCodeLine{92                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d; ++i) normal[i] = V(i, d-\/1);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94                 \textcolor{comment}{// check for consistency in the direction}}
+\DoxyCodeLine{95                 \textcolor{comment}{// assume normals point towards origin}}
+\DoxyCodeLine{96                 normal = (normal.\mbox{\hyperlink{classPoint_a0a454f14e75c71d0f8d4da1e2c3c4ca0}{dot}}(-\/p)>0)?normal:-\/normal;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98                 \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}}.push\_back(normal);}
+\DoxyCodeLine{99             \}}
+\DoxyCodeLine{100             \textcolor{keywordflow}{else} \mbox{\hyperlink{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}{\_normalvec}}.push\_back(\mbox{\hyperlink{classPoint}{Point<d, T>}}());}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102         \mbox{\hyperlink{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}{\_has\_normals}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{103     \}}
 
 \end{DoxyCode}
 
@@ -172,7 +200,11 @@ std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$d, T$>$ $>$ \mbox{\hyper
 
 
 
-Definition at line 45 of file normal\+\_\+estimator.\+h.
+point vector to process 
+
+
+
+Definition at line 58 of file normal\+\_\+estimator.\+h.
 
 \mbox{\Hypertarget{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}\label{classNormalEstimator_acf224a18ad5cddb2d3fa12b76c3965cf}} 
 \index{NormalEstimator$<$ d, T $>$@{NormalEstimator$<$ d, T $>$}!\_normalvec@{\_normalvec}}
@@ -183,7 +215,11 @@ std\+::vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$d, T$>$ $>$ \mbox{\hyper
 
 
 
-Definition at line 46 of file normal\+\_\+estimator.\+h.
+vector local normals for each point in the points vector 
+
+
+
+Definition at line 61 of file normal\+\_\+estimator.\+h.
 
 \mbox{\Hypertarget{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}\label{classNormalEstimator_a0cef39f2d1ce282c942837a2f47532f8}} 
 \index{NormalEstimator$<$ d, T $>$@{NormalEstimator$<$ d, T $>$}!\_has\_normals@{\_has\_normals}}
@@ -194,7 +230,7 @@ bool \mbox{\hyperlink{classNormalEstimator}{Normal\+Estimator}}$<$ d, T $>$\+::\
 
 
 
-Definition at line 47 of file normal\+\_\+estimator.\+h.
+Definition at line 63 of file normal\+\_\+estimator.\+h.
 
 
 

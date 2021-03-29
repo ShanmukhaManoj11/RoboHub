@@ -63,7 +63,7 @@ private:
 	bool _has_normals;
 
 	/**
-	* @brief method to comput normals based on SVD of local covariance matrix
+	* @brief method to compute normals based on SVD of local covariance matrix
 	*/
 	void compute_normals(const double& search_radius)
 	{
