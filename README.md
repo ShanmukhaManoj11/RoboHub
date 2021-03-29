@@ -33,7 +33,7 @@ Tests are provided as .sh files in `scripts` directory
 $ cd scripts
 ```
 
-1. __Test normal estimation__  
+1. __Test normal estimation__   
 ``` bash
 $ ./test_normal_estimation.sh
 ```
@@ -41,8 +41,25 @@ $ ./test_normal_estimation.sh
 | :------------------------------------------: | :---------------------------------------------------: |
 | ![hemisphere](./media/hemisphere_points.png) | ![hemisphere_normals](./media/hemisphere_normals.png) |
 
-2. __Test plane extraction__
+2. __Test plane extraction__  
+Input data for this test is taken from KITTI dataset
 ``` bash
 $ ./test_plane_extraction.sh
 ```
 | ![KITTI sample](./media/kitti_sample_data.png) | ![seg out](./media/segmented_output.png) |
+| :--------------------------------------------: | :--------------------------------------: |
+
+3. __Test A* planner__  
+Input map for this test is taken from [here](https://github.com/zkytony/graphspn/tree/master/graphspn/experiments/dataset/cold-groundtruth/Stockholm/groundtruth/floor4)  
+``` bash
+$ ./test_astar.sh
+```
+| ![map](./media/map.png) | ![map_path_astar](./media/map_path_astar.png) |
+| :---------------------: | :-------------------------------------------: |
+
+4. __Test RRT planner__    
+``` bash
+$ ./test_rrt.sh
+```
+| ![map](./media/map.png) | ![map_path_astar](./media/map_path_rrt.png) |
+| :---------------------: | :-----------------------------------------: |
