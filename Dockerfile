@@ -18,7 +18,8 @@ RUN apt-get install -y libgl1-mesa-dev libqt5x11extras5 libxkbcommon-x11-0 \
 RUN pip3 install numpy \
 	&& pip3 install vtk \
 	&& pip3 install mayavi \
-	&& pip3 install PyQt5
+	&& pip3 install PyQt5 
+RUN pip3 install matplotlib
 
 WORKDIR /workspace
 ADD data /workspace/data 
