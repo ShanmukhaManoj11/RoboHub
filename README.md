@@ -63,3 +63,11 @@ $ ./test_rrt.sh
 ```
 | ![map](./media/map.png) | ![map_path_astar](./media/map_path_rrt.png) |
 | :---------------------: | :-----------------------------------------: |
+
+### TO-DO  
+
+- [] RRT planner has still some issues, it is not generating consistent paths all the time. Need to implement RRT* which leads to more straighter and practical paths
+
+- [] Map in planner is being direclty used, cost values need to be diffused to account for safe distances and obstacle & robot footprints
+
+- [] Bidirectional RRT 
