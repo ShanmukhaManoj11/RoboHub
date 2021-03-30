@@ -39,9 +39,12 @@ private:
 	*/
 	std::vector<Point2f> rrt(Point2f& start, Point2f& goal, int max_iterations, double max_step)
 	{
+		// get bounds to generate random points within
+		float dx = std::max(std::abs(start[0]-goal[0]), std::abs(start[1]-goal[1]))+2.0;
+
 		std::random_device rd;
 		std::mt19937 gen(rd());
-		std::uniform_real_distribution<float> distrib(-30.0, 30.0);
+		std::uniform_real_distribution<float> distrib(-dx, dx);
 
 		// construct a 2 dimensional tree and define a map to save parent corresponding parent nodes
 		KDTree<2, float> tree;
@@ -58,7 +61,7 @@ private:
 			// generate a random point and use the goal point now and then to bias the computed path towards goal
 			Point2f rand_point;
 			if(i%10==9) rand_point = goal;
-			else rand_point = Point2f({distrib(gen), distrib(gen)});
+			else rand_point = Point2f({start[0]+distrib(gen), start[1]+distrib(gen)});
 
 			// get closest point to the random point in the current tree
 			std::shared_ptr< KDNode<2, float> > closest_point_ptr = tree.search(rand_point, 0);
