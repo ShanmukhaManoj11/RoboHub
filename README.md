@@ -66,8 +66,8 @@ $ ./test_rrt.sh
 
 ### TO-DO  
 
-* [] RRT planner has still some issues, it is not generating consistent paths all the time. Need to implement RRT* which leads to more straighter and practical paths
+- [] (RRT planner has still some issues, it is not generating consistent paths all the time. Need to implement RRT* which leads to more straighter and practical paths)
 
-* [] Map in planner is being direclty used, cost values need to be diffused to account for safe distances and obstacle & robot footprints
+- [] (Map in planner is being direclty used, cost values need to be diffused to account for safe distances and obstacle & robot footprints)
 
-* [] Bidirectional RRT 
+- [] (Bidirectional RRT) 
